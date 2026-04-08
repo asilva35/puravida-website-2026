@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Metrópolis - High Performance 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0a192f;
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            cursor: grab;
+            /* Cursor inicial para el mapa */
+        }
+
+        body:active {
+            cursor: grabbing;
+        }
+
+        #webgl-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            outline: none;
+        }
+
+        #ui-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .pointer-events-auto {
+            pointer-events: auto;
+        }
+
+        /* Estilos de la vista de detalle */
+        #detail-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            background: rgba(10, 25, 47, 0.98);
+            backdrop-filter: blur(15px);
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            flex-direction: column;
+            cursor: default;
+            /* Cursor por defecto en secciones internas */
+        }
+
+        @media (min-width: 768px) {
+            #detail-view {
+                flex-direction: row;
+            }
+        }
+
+        .detail-image-container {
+            flex: 1.2;
+            height: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .detail-image-container {
+                height: 100%;
+            }
+        }
+
+        .detail-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .detail-content {
+            flex: 1;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 50%;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 768px) {
+            .detail-content {
+                padding: 5rem;
+                height: 100%;
+            }
+        }
+
+        .custom-btn {
+            padding: 1rem 2.5rem;
+            background: #d2b48c;
+            color: #0a192f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        #cursor-label {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0.6rem 1.2rem;
+            background: #d2b48c;
+            color: #0a192f;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+            transform: translate(-50%, -150%);
+        }
+
+        /* Panel de carga */
+        #loader-panel {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            pointer-events: auto;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="cursor-label">Explorar</div>
+
+    <div id="loader-panel" class="text-white text-[10px]">
+        <p class="mb-2 opacity-50 uppercase tracking-widest">Cargar Modelo Personalizado</p>
+        <input type="file" id="gltf-input" accept=".gltf,.glb" class="hidden">
+        <button onclick="document.getElementById('gltf-input').click()"
+            class="bg-blue-900/50 hover:bg-blue-800 px-3 py-1 rounded border border-blue-400/30 transition-colors">
+            SELECCIONAR .GLB
+        </button>
+    </div>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="ui-layer">
+        <header class="flex justify-between items-center w-full">
+            <div class="text-white">
+                <h1 class="text-3xl font-bold tracking-tighter uppercase">MARITIME_09_EXT</h1>
+                <p class="text-[10px] text-blue-300 tracking-[0.4em] mt-1 font-light opacity-70">PERFORMANCE OPTIMIZED
+                </p>
+            </div>
+        </header>
+
+        <footer class="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-4">
+            <div class="text-white max-w-sm">
+                <p class="text-[10px] text-blue-300 leading-relaxed uppercase tracking-widest opacity-80">
+                    InstancedMesh Enabled // Dynamic Tilt Enabled // Scene Clean-up On Load
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="detail-view">
+        <div class="detail-image-container"><img id="detail-img" src="" class="detail-image"></div>
+        <div class="detail-content text-white">
+            <p id="detail-subtitle" class="text-blue-400 text-[10px] tracking-[0.5em] mb-6 uppercase font-bold">
+                Localización</p>
+            <h2 id="detail-title" class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-none">Título</h2>
+            <p id="detail-desc" class="text-blue-100/70 text-sm md:text-lg leading-relaxed mb-12 max-w-xl font-light">
+                Descripción.</p>
+            <button id="btn-back" class="custom-btn pointer-events-auto"><span>Volver al Mapa</span></button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://mrdoob.github.io/stats.js/build/stats.min.js"></script>
+
+    <script>
+        // --- 1. PERFORMANCE MONITORING ---
+        const stats = new Stats();
+        stats.showPanel(0);
+        document.body.appendChild(stats.dom);
+
+        // --- 2. CONFIGURACIÓN BÁSICA ---
+        const canvas = document.getElementById('webgl-canvas');
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = false;
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color('#0a192f');
+        scene.fog = new THREE.FogExp2('#0a192f', 0.015);
+
+        const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const initialPos = { x: 50, y: 40, z: 50 };
+        camera.position.set(initialPos.x, initialPos.y, initialPos.z);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // LIMITAR ZOOM
+        controls.minDistance = 15;
+        controls.maxDistance = 100;
+
+        // --- 3. ILUMINACIÓN ---
+        const ambientLight = new THREE.AmbientLight(0x4080ff, 1.2);
+        scene.add(ambientLight);
+
+        const sunLight = new THREE.DirectionalLight(0xffffff, 1.8);
+        sunLight.position.set(50, 100, 50);
+        scene.add(sunLight);
+
+        // Contenedores para limpieza fácil
+        const cityContainer = new THREE.Group();
+        scene.add(cityContainer);
+
+        let poiMeshes = [];
+        let poiPins = [];
+
+        // --- 4. TERRENO ---
+        const createTerrain = () => {
+            const terrainSize = 150;
+            const terrainGeo = new THREE.PlaneGeometry(terrainSize, terrainSize, 80, 80);
+            const posAttr = terrainGeo.attributes.position;
+            for (let i = 0; i < posAttr.count; i++) {
+                let x = posAttr.getX(i); let y = posAttr.getY(i);
+                let elevation = Math.sin(x * 0.1) * Math.cos(y * 0.1) * 3 + Math.sin(x * 0.05) * 2;
+                posAttr.setZ(i, elevation);
+            }
+            terrainGeo.computeVertexNormals();
+            const terrain = new THREE.Mesh(terrainGeo, new THREE.MeshStandardMaterial({ color: 0x162a4a, roughness: 0.9 }));
+            terrain.rotation.x = -Math.PI / 2;
+            cityContainer.add(terrain);
+        };
+        createTerrain();
+
+        // --- 5. EDIFICIOS INSTANCIADOS ---
+        const createCity = () => {
+            const count = 600;
+            const buildGeo = new THREE.BoxGeometry(1, 1, 1);
+            const buildMat = new THREE.MeshStandardMaterial({ color: 0xd2b48c });
+            const instancedBuildings = new THREE.InstancedMesh(buildGeo, buildMat, count);
+
+            const dummy = new THREE.Object3D();
+            for (let i = 0; i < count; i++) {
+                const x = (Math.random() - 0.5) * 80;
+                const z = (Math.random() - 0.5) * 80;
+                const h = 2 + Math.random() * 8;
+                const terrainElev = Math.sin(x * 0.1) * Math.cos(z * 0.1) * 3 + Math.sin(x * 0.05) * 2;
+
+                dummy.position.set(x, (h / 2) + terrainElev, z);
+                dummy.scale.set(1.8, h, 1.8);
+                dummy.updateMatrix();
+                instancedBuildings.setMatrixAt(i, dummy.matrix);
+            }
+            cityContainer.add(instancedBuildings);
+        };
+        createCity();
+
+        // --- 6. GESTIÓN DE POI ---
+        const createPin = (color) => {
+            const group = new THREE.Group();
+            const head = new THREE.Mesh(new THREE.SphereGeometry(0.7, 12, 12), new THREE.MeshBasicMaterial({ color }));
+            head.position.y = 2.5;
+            const cone = new THREE.Mesh(new THREE.ConeGeometry(0.7, 2, 12), new THREE.MeshBasicMaterial({ color }));
+            cone.rotation.x = Math.PI; cone.position.y = 1.5;
+            group.add(head, cone);
+            return group;
+        };
+
+        const addPOI = (title, subtitle, desc, pos, color, img) => {
+            const data = { title, subtitle, desc, pos, color, img };
+            const pin = createPin(color);
+            pin.position.set(pos.x, pos.y + 8, pos.z);
+            pin.userData = data;
+            cityContainer.add(pin);
+            poiPins.push(pin);
+
+            const hb = new THREE.Mesh(new THREE.SphereGeometry(2), new THREE.MeshBasicMaterial({ visible: false }));
+            hb.position.set(pos.x, pos.y + 9, pos.z);
+            hb.userData = data;
+            hb.parentPin = pin;
+            poiMeshes.push(hb);
+            cityContainer.add(hb);
+        };
+
+        // POIs iniciales
+        addPOI("Puerto Azul", "Muelle A", "Zona de carga optimizada.", { x: -25, y: 1, z: -15 }, 0xff4400, "https://images.unsplash.com/photo-1516108317508-6788f6a160e6?q=80&w=1080&auto=format&fit=crop");
+        addPOI("Centro de Datos", "Core", "Infraestructura crítica.", { x: 15, y: 3, z: 10 }, 0x00ffcc, "https://images.unsplash.com/photo-1515630278258-407f66498911?q=80&w=1080&auto=format&fit=crop");
+
+        // --- 7. LIMPIEZA PROFUNDA Y CARGA GLTF ---
+        const clearCurrentScene = () => {
+            // Recorrer y limpiar recursos de forma recursiva
+            cityContainer.traverse((child) => {
+                if (child.geometry) child.geometry.dispose();
+                if (child.material) {
+                    if (Array.isArray(child.material)) {
+                        child.material.forEach(m => m.dispose());
+                    } else {
+                        child.material.dispose();
+                    }
+                }
+            });
+
+            while (cityContainer.children.length > 0) {
+                cityContainer.remove(cityContainer.children[0]);
+            }
+            poiMeshes = [];
+            poiPins = [];
+        };
+
+        const loader = new THREE.GLTFLoader();
+        document.getElementById('gltf-input').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const url = URL.createObjectURL(file);
+
+            clearCurrentScene(); // Limpiar escena previa
+
+            loader.load(url, (gltf) => {
+                cityContainer.add(gltf.scene);
+
+                gltf.scene.traverse((child) => {
+                    if (child.name.startsWith('POI_')) {
+                        const parts = child.name.split('_');
+                        const title = parts[1] || "Destino";
+                        const subtitle = parts[2] || "Referencia";
+                        const colorString = parts[3] || "ffffff";
+                        const color = parseInt(colorString, 16);
+
+                        const worldPos = new THREE.Vector3();
+                        child.getWorldPosition(worldPos);
+
+                        addPOI(title, subtitle, "Punto de interés detectado en el modelo 3D.", worldPos, color, "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?q=80&w=1080&auto=format&fit=crop");
+                        child.visible = false;
+                    }
+                });
+            }, undefined, (error) => {
+                console.error("Error cargando GLTF:", error);
+            });
+        });
+
+        // --- 8. INTERACCIÓN Y CURSORES ---
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        let hovered = null;
+        let transitioning = false;
+
+        window.addEventListener('pointermove', (e) => {
+            mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+            if (transitioning) return;
+
+            raycaster.setFromCamera(mouse, camera);
+            const hits = raycaster.intersectObjects(poiMeshes);
+            const label = document.getElementById('cursor-label');
+
+            if (hits.length > 0) {
+                const obj = hits[0].object;
+                if (hovered !== obj) {
+                    hovered = obj;
+                    document.body.style.cursor = 'pointer';
+                    label.textContent = hovered.userData.title;
+                    label.style.opacity = '1';
+                    gsap.to(obj.parentPin.scale, { x: 1.5, y: 1.5, z: 1.5, duration: 0.3 });
+                }
+            } else if (hovered) {
+                gsap.to(hovered.parentPin.scale, { x: 1, y: 1, z: 1, duration: 0.3 });
+                hovered = null;
+                document.body.style.cursor = 'grab'; // Volver al cursor de mapa
+                label.style.opacity = '0';
+            }
+            label.style.left = `${e.clientX}px`; label.style.top = `${e.clientY}px`;
+        });
+
+        window.addEventListener('pointerdown', () => {
+            if (hovered && !transitioning) startTransition(hovered.userData);
+        });
+
+        function startTransition(data) {
+            transitioning = true;
+            controls.enabled = false;
+            document.body.style.cursor = 'default';
+
+            const dv = document.getElementById('detail-view');
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-subtitle').textContent = data.subtitle;
+            document.getElementById('detail-desc').textContent = data.desc;
+            document.getElementById('detail-img').src = data.img;
+
+            gsap.timeline()
+                .to(camera.position, { x: data.pos.x, y: data.pos.y + 12, z: data.pos.z + 8, duration: 1.5, ease: "expo.inOut" })
+                .to(controls.target, { x: data.pos.x, y: data.pos.y + 8, z: data.pos.z, duration: 1.5, ease: "expo.inOut" }, 0)
+                .set(dv, { visibility: 'visible' })
+                .to(dv, { opacity: 1, duration: 0.6 });
+        }
+
+        document.getElementById('btn-back').addEventListener('click', () => {
+            gsap.to(document.getElementById('detail-view'), {
+                opacity: 0, duration: 0.5, onComplete: () => {
+                    document.getElementById('detail-view').style.visibility = 'hidden';
+                    document.body.style.cursor = 'grab';
+                    gsap.to(camera.position, { x: initialPos.x, y: initialPos.y, z: initialPos.z, duration: 1.2, ease: "power2.inOut" });
+                    gsap.to(controls.target, { x: 0, y: 0, z: 0, duration: 1.2, ease: "power2.inOut" });
+                    setTimeout(() => { transitioning = false; controls.enabled = true; }, 1200);
+                }
+            });
+        });
+
+        // --- 9. LOOP CON TILT ADAPTATIVO CORREGIDO ---
+        function animate() {
+            stats.begin();
+            requestAnimationFrame(animate);
+            const time = performance.now() * 0.001;
+
+            // INCLINACIÓN ADAPTATIVA BASADA EN ZOOM (FIXED getDistance error)
+            // Se calcula la distancia actual entre la cámara y el centro
+            const currentDist = camera.position.distanceTo(controls.target);
+            const minAngle = Math.PI / 3.8; // Más cenital (arriba)
+            const maxAngle = Math.PI / 2.2; // Más inclinado (cerca del suelo)
+
+            // Mapeo de la distancia a la inclinación máxima permitida
+            const t = (currentDist - controls.minDistance) / (controls.maxDistance - controls.minDistance);
+            controls.maxPolarAngle = maxAngle - (maxAngle - minAngle) * Math.pow(t, 0.7);
+
+            // Animación de pins
+            poiPins.forEach((pin, i) => {
+                if (pin.userData && pin.userData.pos) {
+                    pin.position.y = (pin.userData.pos.y + 8) + Math.sin(time * 2 + i) * 0.4;
+                    pin.rotation.y += 0.01;
+                }
+            });
+
+            // Sincronizar hitboxes
+            poiMeshes.forEach(hb => {
+                if (hb.parentPin) {
+                    hb.position.y = hb.parentPin.position.y + 1;
+                }
+            });
+
+            controls.update();
+            renderer.render(scene, camera);
+            stats.end();
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+
+</html>

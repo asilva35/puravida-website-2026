@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --brand-teal: #38b2ac;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --brand-white: #ffffff;
+            --brand-gray: #f1f5f9;
+            --brand-gray-dark: #64748b;
+            --brand-gray-light: #94a3b8;
+            --brand-gray-lighter: #cbd5e1;
+            --brand-gray-lightest: #e2e8f0;
+            --brand-gray-lightest: #e2e8f0;
+            --text-color: #334155;
+            --text-color-light: #64748b;
+            --text-color-lighter: #94a3b8;
+            --text-color-lightest: #cbd5e1;
+            --text-color-lightest: #e2e8f0;
+            --text-color-lightest: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        /*SKELETON SCREEN*/
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Clase para desvanecer */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+
+        /*END - SKELETON SCREEN*/
+
+        .brand-teal {
+            color: var(--brand-teal);
+        }
+
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+
+        .bg-brand-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .border-brand-teal {
+            border-color: var(--brand-teal);
+        }
+
+        /* Efectos de vidrio y profundidad */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.05), transparent 40%);
+        }
+
+        /* Utilidad para las tarjetas de valores */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 178, 172, 0.1);
+        }
+    </style>
+    <script src="../../dev-loader.js"></script>
+</head>
+
+<body>
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
+    <!-- Top Bar -->
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/servicios" data-faisan-url_en="/en/services"></div>
+
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/en/" data-faisan-label_link_home="Home"
+        data-faisan-link_services="/en/services" data-faisan-label_link_services="Services"
+        data-faisan-link_faq="/en/faq" data-faisan-label_link_faq="Faq" data-faisan-link_blog="/en/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/en/contact"
+        data-faisan-label_link_contact="Contact" data-faisan-placeholder_search="Search..."></div>
+
+    <section id="main" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div
+            class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-teal-50 rounded-full blur-3xl opacity-50">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-50">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="services-detail-tagline" data-faisan-type="text"
+                    data-faisan-label="Services Detail Tagline">Portfolio of Specialties</span>
+                <h1 class="editable_content text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight"
+                    data-faisan-id="services-detail-title" data-faisan-type="text"
+                    data-faisan-label="Services Detail Title">
+                    REAL ESTATE ESCROW AND TRUST SERVICES
+                </h1>
+                <p class="editable_content text-slate-500 text-lg md:text-xl leading-relaxed"
+                    data-faisan-id="services-detail-description" data-faisan-type="text"
+                    data-faisan-label="Services Detail Description">
+                    At Puravida Escrow & Trust, we are committed to providing comprehensive custody and fund
+                    administration
+                    services with the highest standards of security and transparency.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Escrow Card -->
+                <div id="escrow"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-01.png" alt="Escrow" class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Escrow</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        This solution provides secure, transparent, and impartial transactions because Pura Vida Escrow
+                        & Trust Services ensures that your funds are kept in an intermediary account, guaranteeing
+                        protection and transparency throughout the process. We ensure that all conditions are met before
+                        proceeding with the release of funds.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic">Individuals or legal entities engaging in a transaction
+                            that, due to its characteristics or value, carries intrinsic risk.</p>
+                    </div>
+                </div>
+
+                <!-- Escrow Inmobiliario Card -->
+                <div id="real-estate-escrow"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-02.png" alt="Real Estate Escrow"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Real Estate Escrow</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Our escrow service for real estate purchases or property developments ensures a swift, secure,
+                        and transparent transaction. We act as intermediaries, facilitating full or partial fund
+                        disbursements as agreed upon by the parties involved. We protect your interests and guarantee a
+                        smooth process in collaboration with all involved parties.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic">Real estate brokers aiming to provide secure, swift,
+                            and transparent transactions to their clients, whether individuals or corporations seeking
+                            to acquire property in Costa Rica, or investors in need of assistance to structure a real
+                            estate project.</p>
+                    </div>
+                </div>
+
+                <!-- Escrow Para Servicios Card -->
+                <div id="escrow-for-services"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-03.png" alt="Escrow for Services"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Escrow for Services</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        We act as intermediaries to ensure secure payments in service acquisition or contracts. Our
+                        secure and reliable account ensures that fund disbursements are carried out according to the
+                        agreed conditions, safeguarding the interests of both the provider and the buyer, ensuring the
+                        satisfaction of both parties.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            to:</span>
+                        <p class="text-sm text-slate-500 italic">Software development companies, e-commerce,
+                            marketplaces, and services providers in general</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso Card -->
+                <div id="trust"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-04.png" alt="Trust" class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Trust</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        We specialize in the secure and reliable administration of assets through trust agreements.
+                        Whether to provide security, protect your assets, or plan the succession of your estate, you can
+                        entrust us with the management of your assets.
+                        <br /><br />
+                        In the trust agreement, the terms and conditions
+                        are established for managing the entrusted assets and distributing the benefits to the
+                        beneficiaries. As trustees, we fulfill our duties with loyalty and diligence, following the
+                        instructions of the settlor, who is the person contributing the assets.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic">Individuals or legal entities who want to ensure that
+                            their assets will be well-administered and managed according to the instructions established
+                            within the trust agreement.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso de Garantía Card -->
+                <div id="guarantee-trust"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-05.png" alt="Guarantee Trust"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Guarantee Trust</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        We specialize in offering guarantee trust management services. We excel in providing reliable
+                        solutions to support outstanding financial obligations. In this type of trust, the trustor
+                        places their property or assets in fiduciary ownership as a guarantee for fulfilling a debt or
+                        obligation.
+                        <br /><br />
+                        We work closely with our clients, providing specialized advice and designing secure agreements
+                        that protect the interests of all parties involved.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic"> credit institutions, cooperatives, banks, companies,
+                            and individuals who use their client&apos;s properties as collateral.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso de Administración Card -->
+                <div id="administration-trust"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-06.png" alt="Administration Trust"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Administration Trust</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Discover the benefits of our administration trust service, a secure and reliable option for
+                        managing your assets. In this type of trust, the trustor transfers to the trustee the
+                        responsibility to directly manage and handle their assets.
+                        <br /><br />
+                        Our team takes care of managing your assets according to your needs and goals. If you require
+                        management of properties, investments, or other assets, our administration trust service is
+                        designed to provide you with a comprehensive and personalized solution tailored to meet your
+                        needs.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic">Individuals or legal entities who wish to have a third
+                            party manage their assets according to specific goals and needs.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso Testamentario Card -->
+                <div id="testamentary-trust"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full lg:col-start-2">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-07.png" alt="Testamentary Trust"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Testamentary Trust</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        A reliable and personalized solution for planning the distribution of your estate. With our
+                        testamentary trust service, you have the option to appoint us as administrators of your estate
+                        and ensure that your assets are delivered to the beneficiaries under the established conditions.
+                        <br /><br />
+                        Our specialized team provides expert guidance and is committed to ensuring the proper execution
+                        of your instructions. With our experience and dedication, we offer peace of mind and protection
+                        in the distribution process of your assets, providing security and support to your loved ones.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Addressed to
+                            :</span>
+                        <p class="text-sm text-slate-500 italic">Individuals who wish to establish precise and specific
+                            instructions on how to manage and distribute their assets during life or in their absence,
+                            valuing the agility to make changes if necessary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <!-- Contact Form -->
+            <div data-faisan-component="contact-form-en.html"></div>
+
+        </div>
+
+        <!-- Mock Map Background -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mt-40">
+            <svg width="100%" height="100%" viewbox="0 0 100 100" preserveaspectratio="none">
+                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+                <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div data-faisan-component="newsletter.html" data-faisan-title="Don&apos;t miss our monthly news"
+        data-faisan-button_text="Subscribe" data-faisan-email_placeholder="Your email"
+        data-faisan-captcha_text="I&apos;m not a Robot">
+    </div>
+
+    <!-- Footer -->
+    <div data-faisan-component="footer-en.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

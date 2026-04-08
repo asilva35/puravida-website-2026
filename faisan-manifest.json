@@ -1,0 +1,129 @@
+{
+  "files": {
+    "assets/images/phone.png": {
+      "hash": "2b30a91a6c07e3644c28f73ad34351d9",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/phone.png"
+    },
+    "assets/images/mail.png": {
+      "hash": "6e213564e98dd05c47337c047f7ce14e",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/mail.png"
+    },
+    "assets/images/es.png": {
+      "hash": "1f30c0f8ed2986e5bee3d3b0ce4a2aa1",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/es.png"
+    },
+    "assets/images/us.png": {
+      "hash": "a5f97a0f56d94de1e38a2265dea61801",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/us.png"
+    },
+    "assets/images/icon-cell-contacto.png": {
+      "hash": "fac74ef568480ce57532b1d8fd264f2a",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-cell-contacto.png"
+    },
+    "assets/images/icon-mail-contacto.png": {
+      "hash": "efdd731be9e23fd96f48d380534679aa",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-mail-contacto.png"
+    },
+    "assets/images/icon-map-contacto.png": {
+      "hash": "524be736218de025b2724d22c1dc3ecc",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-map-contacto.png"
+    },
+    "assets/images/icon-map-footer.png": {
+      "hash": "b3906cb62657a11f2a7e0422cef5bb59",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-map-footer.png"
+    },
+    "assets/images/icon-cell-footer.png": {
+      "hash": "d3d042084fb6a604940f8f05dc2769da",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-cell-footer.png"
+    },
+    "assets/images/icon-mail-footer.png": {
+      "hash": "3a2c9ddbe225d0399f4ea534973810b4",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-mail-footer.png"
+    },
+    "pages/contacto-2026-en": {
+      "hash": "4bd1a44164816f78a96b02251c21a23c"
+    },
+    "pages/contacto-2026": {
+      "hash": "8de669e02354d55f816c2d31d63089d7"
+    },
+    "pages/faq-2026-en": {
+      "hash": "0618aa4fa821c0254e2fa5661e7be7eb"
+    },
+    "pages/faq-2026": {
+      "hash": "fec5e7d167a043c6e154a88384a44e83"
+    },
+    "assets/images/why-choose-us.jpg": {
+      "hash": "b44e873c8835a44cfa3c0434dd524aa6",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/why-choose-us.jpg"
+    },
+    "assets/images/header-04.jpg": {
+      "hash": "85457b5ea93a402b62c5e46b492640f2",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/header-04.jpg"
+    },
+    "assets/images/icon-politica-calidad.png": {
+      "hash": "9a5750b185dddb62e5d182aa426d16c2",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-politica-calidad.png"
+    },
+    "assets/images/icon-servicios-01.png": {
+      "hash": "c790abba15f34a667dc07de370fff7a7",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-servicios-01.png"
+    },
+    "assets/images/icon-servicios-02.png": {
+      "hash": "683acd33f80d3e0fa14cd479eb83ed8e",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-servicios-02.png"
+    },
+    "assets/images/icon-servicios-03.png": {
+      "hash": "15848a1144964142f3a469eefe359ef1",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-servicios-03.png"
+    },
+    "pages/home-page-draft-2026-en": {
+      "hash": "9b8fc88358695e10b4675bfaac767b68"
+    },
+    "pages/home-page-draft-2026": {
+      "hash": "54310f50cf207b9bb311344f3f1039a9"
+    },
+    "pages/realestate-brokers-2026": {
+      "hash": "10f666f2e7ad5c172fcfb8174a81e0c2"
+    },
+    "pages/servicios-2026-en": {
+      "hash": "06cb50c7c49d9e08b5dfaf82aac6be45"
+    },
+    "pages/servicios-2026": {
+      "hash": "a00896e7a6ff7e6c89419d077635807a"
+    },
+    "templates/post-template": {
+      "hash": "9f527a78a4d0e894f9d54ef142ba5fc9"
+    },
+    "wp_plugins/puravidaescrow": {
+      "hash": "7447cb2aa59a939d11461e84302ee626"
+    },
+    "assets/images/icon-servicios-04.png": {
+      "hash": "e4ee765031d896b2d033ecc32a6fed22",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/icon-servicios-04.png"
+    },
+    "assets/images/icon-servicios-05.png": {
+      "hash": "b09d6d7665c8b96318282a7824681221",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/icon-servicios-05.png"
+    },
+    "assets/images/icon-servicios-06.png": {
+      "hash": "13470311308c888e6002ad25537c7604",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/icon-servicios-06.png"
+    },
+    "assets/images/icon-servicios-07.png": {
+      "hash": "aae4fc066836bd767caef78f052e1e22",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/icon-servicios-07.png"
+    },
+    "pages/contacto": {
+      "hash": "8de669e02354d55f816c2d31d63089d7"
+    },
+    "pages/contact": {
+      "hash": "e580a629a36c475e3d6be9f76e5974d8"
+    },
+    "pages/faq": {
+      "hash": "4c03e91273ec176e0f164ff89b614a3d"
+    },
+    "pages/faq-2": {
+      "hash": "0618aa4fa821c0254e2fa5661e7be7eb"
+    }
+  }
+}

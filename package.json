@@ -1,0 +1,19 @@
+{
+  "name": "puravida-website-2026",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "live-server --port=3000 src/",
+    "remote": "faisanbridge remote",
+    "fetch": "faisanbridge fetch",
+    "merge": "faisanbridge merge",
+    "push": "faisanbridge push",
+    "build": "faisanbridge build",
+    "status": "faisanbridge status",
+    "abort": "faisanbridge abort"
+  },
+  "devDependencies": {
+    "faisanbridge": "^0.0.5",
+    "live-server": "^1.2.2"
+  }
+}

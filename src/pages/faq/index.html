@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --brand-teal: #38b2ac;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --brand-white: #ffffff;
+            --brand-gray: #f1f5f9;
+            --brand-gray-dark: #64748b;
+            --brand-gray-light: #94a3b8;
+            --brand-gray-lighter: #cbd5e1;
+            --brand-gray-lightest: #e2e8f0;
+            --brand-gray-lightest: #e2e8f0;
+            --text-color: #334155;
+            --text-color-light: #64748b;
+            --text-color-lighter: #94a3b8;
+            --text-color-lightest: #cbd5e1;
+            --text-color-lightest: #e2e8f0;
+            --text-color-lightest: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        /*SKELETON SCREEN*/
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Clase para desvanecer */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+
+        /*END - SKELETON SCREEN*/
+
+        .brand-teal {
+            color: var(--brand-teal);
+        }
+
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+
+        .bg-brand-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .border-brand-teal {
+            border-color: var(--brand-teal);
+        }
+
+        /* Efectos de vidrio y profundidad */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.05), transparent 40%);
+        }
+
+        /* Utilidad para las tarjetas de valores */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 178, 172, 0.1);
+        }
+    </style>
+
+    <script src="../../dev-loader.js"></script>
+</head>
+
+<body>
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
+    <!-- Top Bar -->
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/faq" data-faisan-url_en="/en/faq-2"></div>
+
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/" data-faisan-label_link_home="Inicio"
+        data-faisan-link_services="/servicios" data-faisan-label_link_services="Servicios" data-faisan-link_faq="/faq"
+        data-faisan-label_link_faq="Preguntas Frecuentes" data-faisan-link_blog="/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/contacto"
+        data-faisan-label_link_contact="Contacto" data-faisan-placeholder_search="Buscar..."></div>
+
+    <section id="faq" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative background -->
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-teal-50/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-slate-50/50 rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="faq-tagline" data-faisan-type="text" data-faisan-label="FAQ Tagline">Centro de
+                    Ayuda</span>
+                <h1 class="editable_content text-4xl md:text-5xl font-extrabold text-slate-900 mb-8"
+                    data-faisan-id="faq-title" data-faisan-type="text" data-faisan-label="FAQ Title">Preguntas
+                    Frecuentes</h1>
+                <p class="editable_content text-slate-500 text-lg" data-faisan-id="faq-description"
+                    data-faisan-type="text" data-faisan-label="FAQ Description">Resuelva sus dudas sobre nuestros
+                    servicios de custodia, administración de fondos y fideicomisos.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+
+                <!-- FAQ Item 1 -->
+                <div
+                    class="faq-item group bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-teal hover:bg-white hover:shadow-xl">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h3 class="editable_content text-xl font-bold text-slate-900 pr-8"
+                            data-faisan-id="faq-item-question-01" data-faisan-type="text"
+                            data-faisan-label="FAQ Item Question 01">¿PV Escrow & Trust Services es una entidad
+                            financiera autorizada por la SUGEF?</h3>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-teal shadow-sm transition-transform duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-8 pt-2">
+                            <div class="h-px bg-slate-100 mb-6"></div>
+                            <p class="editable_content text-slate-600 leading-relaxed mb-4"
+                                data-faisan-id="faq-item-answer-01" data-faisan-type="text"
+                                data-faisan-label="FAQ Item Answer 01">Sí, PV Escrow & Trust Services cuenta con la
+                                autorización y supervisión de SUGEF (Superintendencia General de Entidades Financieras).
+                                Nos hemos comprometido a cumplir rigurosamente con todos los parámetros y requisitos
+                                establecidos por SUGEF, lo cual nos ha permitido obtener la autorización necesaria para
+                                operar.</p>
+                            <a href="https://www.sugef.fi.cr/SIPO.Reportes" target="_blank"
+                                class="inline-flex items-center gap-2 text-brand-teal font-bold hover:gap-3 transition-all">
+                                Verificar en SIPO SUGEF
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="02"
+                    data-faisan-question="¿Qué tipo de servicios de fideicomiso ofrece PV Escrow & Trust Services?"
+                    data-faisan-answer="Es un servicio de custodia de fondos en el que un tercero neutral y confiable se encarga
+                                de mantener los fondos de una transacción seguros hasta que se cumplan con las
+                                condiciones acordadas. El servicio de escrow garantiza que los fondos se liberen y se
+                                distribuyan de acuerdo con las instrucciones de las partes involucradas.">
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="03" data-faisan-question="¿Por qué se utilizan servicios escrow en la compra
+                            venta de inmuebles?" data-faisan-answer="Los servicios escrow se utilizan en la compra venta de inmuebles debido a su capacidad
+                                para ofrecer seguridad y protección tanto al comprador como al vendedor. Al involucrar
+                                un tercero imparcial, se minimizan los riesgos de fraude y se asegura que el intercambio
+                                de propiedad por dinero se realice solo cuando todas las obligaciones contractuales han
+                                sido satisfechas.">
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="04"
+                    data-faisan-question="¿Qué garantiza el servicio Escrow en la compra venta de inmuebles?"
+                    data-faisan-answer="El agente escrow actúa como intermediario para garantizar que la transacción se realice
+                                de manera justa y transparente. Además, se encarga de coordinar los pagos y
+                                transferencias de manera segura, asegurando que el vendedor reciba el pago acordado y el
+                                comprador adquiera la titularidad de la propiedad sin contratiempos legales.">
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="05" data-faisan-question="¿Cuál es el papel del agente de escrow en la
+                            transacción?" data-faisan-answer="El agente de escrow desempeña un papel crucial en la transacción al actuar como
+                                intermediario imparcial. Su función principal es asegurar la seguridad de los fondos y
+                                la documentación, garantizando el cumplimiento de las condiciones acordadas y
+                                facilitando una transferencia segura de la propiedad.">
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="06" data-faisan-question="¿Qué documentación se necesita para gestionar un
+                            servicio Escrow?" data-faisan-answer="Para gestionar un servicio escrow, se requiere la firma del contrato de Escrow,
+                                documentos que demuestren la identidad de las partes y toda documentación que respalde
+                                el origen de los fondos con el fin de asegurar su legalidad y el cumplimiento de todas
+                                las regulaciones.">
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="07"
+                    data-faisan-question="¿Qué es un Fideicomiso y para qué sirve?" data-faisan-answer="Un fideicomiso es un contrato en el cual el fideicomitente transfiere la propiedad de
+                    bienes o activos a una persona o entidad llamada fiduciario (Pura Vida Escrow & Trust Services), quien
+                    los administra en beneficio de un tercero, llamado beneficiario. Sirve para proteger y gestionar
+                    adecuadamente los activos, garantizando su uso de acuerdo con las instrucciones y condiciones
+                    establecidas en el contrato. Es una herramienta eficaz para la planificación patrimonial, la
+                    protección de bienes y la administración de recursos con un propósito específico.">
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="08"
+                    data-faisan-question="¿Qué es un fideicomiso de administración y para qué sirve?"
+                    data-faisan-answer="Un fideicomiso de administración es un tipo de fideicomiso en el cual el fiduciario se encarga de administrar y gestionar activos en nombre del fideicomitente. El objetivo principal de un fideicomiso de administración es garantizar una gestión eficiente y profesional de los activos, asegurando su preservación y beneficio para los beneficiarios designados.">
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="09"
+                    data-faisan-question="¿Qué es un fideicomiso de garantía y para qué sirve?"
+                    data-faisan-answer="Un fideicomiso de garantía es un contrato en el cual una parte, conocida como fiduciario, tiene la responsabilidad de mantener y administrar ciertos bienes o activos en beneficio de otra parte, conocida como beneficiario. El propósito principal de un fideicomiso de garantía es asegurar el cumplimiento de una obligación o garantizar el pago de una deuda. El fiduciario actúa como custodio de los activos y los utiliza según las instrucciones establecidas en el contrato de fideicomiso.">
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="10"
+                    data-faisan-question="¿Qué es un fideicomiso de testamentario y para qué sirve?"
+                    data-faisan-answer="Un fideicomiso testamentario es un contrato que le permite a una persona, llamada fideicomitente o testador, transferir sus activos y propiedades a un fiduciario para ser administrados y distribuidos según sus deseos mientras que esté en vida y/o después de su fallecimiento. Este tipo de fideicomiso permite evitar la intervención del proceso de sucesión y puede ayudar a proteger y distribuir adecuadamente los activos del fallecido.">
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="11"
+                    data-faisan-question="¿Qué es un fiduciario?"
+                    data-faisan-answer="Un fiduciario es una persona o entidad designada para administrar los activos o bienes en beneficio de otra persona o entidad, llamada beneficiario. El fiduciario tiene la responsabilidad legal y ética de proteger y gestionar los activos o bienes del beneficiario de manera adecuada, actuando siempre en su mejor interés y conforme a los términos acordados en el contrato de fideicomiso.">
+                </div>
+
+                <!-- FAQ Item 12 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="12"
+                    data-faisan-question="¿Qué es un contrato de fideicomiso?"
+                    data-faisan-answer="Un contrato de fideicomiso es un acuerdo legal donde intervienen tres partes: el fideicomitente (aporta los bienes y activos) , el fiduciario (administra los bienes y activos traspasados en propiedad fiduciaria) y el fideicomisario (beneficiario final del patrimonio del fideicomiso). Este contrato establece los términos y condiciones bajo los cuales se administrarán y distribuirán los activos o bienes transferidos en el fideicomiso. El contrato de fideicomiso detalla los derechos y responsabilidades de todas las partes involucradas y proporciona una estructura legal para la gestión adecuada de los bienes y activos.">
+                </div>
+
+                <!-- FAQ Item 13 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="13"
+                    data-faisan-question="¿Para qué sirve la custodia de Fondos?"
+                    data-faisan-answer="Uno de los principales propósitos de la custodia de fondos, es garantizar la seguridad y protección de los fondos en una transacción. Al depositar los fondos en una cuenta Escrow, se crea una capa adicional de seguridad y se minimiza el riesgo de fraude o mal uso de los fondos. Además, la custodia de fondos puede facilitar la transparencia en las transacciones y asegurar que los pagos se realicen según lo acordado.">
+                </div>
+
+                <!-- FAQ Item 14 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="14"
+                    data-faisan-question="¿Por qué debo enviar la documentación del Origen de Fondos?"
+                    data-faisan-answer="La solicitud de documentación del origen de los fondos es una práctica estándar en los servicios de fideicomiso y escrow y tiene como objetivo cumplir con las regulaciones y requisitos legales establecidos para prevenir el lavado de dinero y el financiamiento del terrorismo. Al solicitar información sobre el origen de los fondos, se busca verificar que los activos que se colocarán en el fideicomiso o cuenta escrow sean legítimos y no estén relacionados con actividades ilícitas.">
+                </div>
+
+                <!-- FAQ Item 15 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="15"
+                    data-faisan-question="¿Cuánto tardan en acreditarse los fondos a la Cuenta Escrow?"
+                    data-faisan-answer="El tiempo para acreditar los fondos en una cuenta escrow puede variar en función de varios factores, como el método de transferencia utilizado, las políticas de la entidad de servicios de fideicomiso y escrow, así como la ubicación de los fondos. En algunos casos, la acreditación puede ocurrir en cuestión de horas o días, mientras que en otros casos puede llevar más tiempo, especialmente en transferencias internacionales. <br /> <br />En el caso de Pura Vida Escrow and Trust, por lo general, el proceso de acreditación de los fondos toma de 3 a 5 días hábiles a partir del momento en que el banco recibe los fondos. Sin embargo, es importante tener en cuenta que este plazo puede estar sujeto a variaciones dependiendo de las circunstancias individuales.">
+                </div>
+
+                <!-- FAQ Item 16 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="16"
+                    data-faisan-question="¿Cuál es su experiencia en manejo de fideicomisos?"
+                    data-faisan-answer="Tenemos una amplia experiencia en el manejo de fideicomisos, respaldada por más de 100 clientes satisfechos. Durante nuestros años de trabajo en el campo de los fideicomisos, hemos adquirido un profundo conocimiento y habilidades para ofrecer soluciones efectivas y seguras a nuestros clientes.">
+                </div>
+
+                <!-- FAQ Item 17 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="17"
+                    data-faisan-question="¿Qué proceso de toma de decisiones se sigue para la administración y distribución de activos en un fideicomiso?"
+                    data-faisan-answer="Seguimos rigurosamente el proceso de toma de decisiones establecido en el contrato de fideicomiso para la administración y distribución de activos. Nuestra prioridad es asegurarnos de cumplir con los términos y condiciones acordados entre todas las partes involucradas. A través de un enfoque transparente y diligente, evaluamos cuidadosamente las disposiciones del contrato.">
+                </div>
+
+                <!-- FAQ Item 18 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="18"
+                    data-faisan-question="¿Cuál es su enfoque para garantizar la transparencia y la comunicación efectiva con los beneficiarios de los fideicomisos?"
+                    data-faisan-answer="Establecemos una relación de confianza al brindar actualizaciones regulares y claras sobre la administración de los activos. Proporcionamos acceso a información relevante, respondemos de manera oportuna a sus preguntas, y mantenemos registros detallados de transacciones.">
+                </div>
+
+                <!-- FAQ Item 19 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="19"
+                    data-faisan-question="¿Tengo que estar en Costa Rica para abrir mi Cuenta Escrow?"
+                    data-faisan-answer="En  Pura Vida Escrow and Trust Services, no es necesario que la persona esté físicamente en Costa Rica para abrir una Cuenta Escrow. Contamos con los medios tecnológicos suficientes para llevar a cabo el proceso de forma remota, utilizando tecnologías de comunicación y medios electrónicos para enviar y recibir la documentación requerida.">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <!-- Contact Form -->
+            <div data-faisan-component="contact-form.html"></div>
+
+        </div>
+
+        <!-- Mock Map Background -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mt-40">
+            <svg width="100%" height="100%" viewbox="0 0 100 100" preserveaspectratio="none">
+                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+                <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div data-faisan-component="newsletter.html" data-faisan-title="No te pierdas nuestras noticias mensuales"
+        data-faisan-button_text="Suscribirse" data-faisan-email_placeholder="Tu correo electrónico"
+        data-faisan-captcha_text="No soy un Robot"></div>
+
+    <!-- Footer -->
+    <div data-faisan-component="footer.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

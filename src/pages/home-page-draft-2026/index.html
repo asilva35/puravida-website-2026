@@ -1,0 +1,709 @@
+<!DOCTYPE html lang="es">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --brand-teal: #38b2ac;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --brand-white: #ffffff;
+            --brand-gray: #f1f5f9;
+            --brand-gray-dark: #64748b;
+            --brand-gray-light: #94a3b8;
+            --brand-gray-lighter: #cbd5e1;
+            --brand-gray-lightest: #e2e8f0;
+            --brand-gray-lightest: #e2e8f0;
+            --text-color: #334155;
+            --text-color-light: #64748b;
+            --text-color-lighter: #94a3b8;
+            --text-color-lightest: #cbd5e1;
+            --text-color-lightest: #e2e8f0;
+            --text-color-lightest: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        /*SKELETON SCREEN*/
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Clase para desvanecer */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+
+        /*END - SKELETON SCREEN*/
+
+        .brand-teal {
+            color: var(--brand-teal);
+        }
+
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+
+        .bg-brand-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .border-brand-teal {
+            border-color: var(--brand-teal);
+        }
+
+        /* Efectos de vidrio y profundidad */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.05), transparent 40%);
+        }
+
+        /* Utilidad para las tarjetas de valores */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 178, 172, 0.1);
+        }
+
+        .hero-section {
+            /* Background image moved to HTML element for better responsive control */
+            background-color: transparent;
+        }
+
+        .hero-img-faisan {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .text-brand-teal {
+            color: var(--brand-teal);
+        }
+    </style>
+    <script src="../../dev-loader.js"></script>
+</head>
+
+<body>
+
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
+    <!-- Top Bar -->
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/" data-faisan-url_en="/en/"></div>
+
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/" data-faisan-label_link_home="Inicio"
+        data-faisan-link_services="/servicios" data-faisan-label_link_services="Servicios" data-faisan-link_faq="/faq"
+        data-faisan-label_link_faq="Preguntas Frecuentes" data-faisan-link_blog="/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/contacto"
+        data-faisan-label_link_contact="Contacto" data-faisan-placeholder_search="Buscar..."></div>
+
+    <!-- Hero Section -->
+    <section
+        class="hero-section hero-gradient relative overflow-hidden min-h-[700px] md:min-h-[90vh] flex items-center">
+        <div
+            class="container mx-auto px-6 grid lg:grid-cols-[50%_50%] xl:grid-cols-[40%_60%] gap-8 lg:gap-16 items-center">
+            <div class="z-20 py-12 md:py-20">
+                <span
+                    class="editable_content brand-teal inline-block px-4 py-1.5 bg-teal-50 text-brand-teal rounded-full text-sm font-semibold mb-6"
+                    data-faisan-id="hero-tagline" data-faisan-type="text" data-faisan-label="Hero Tagline">
+                    - Fideicomisos
+                </span>
+                <h1 class="editable_content text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6"
+                    data-faisan-id="hero-title" data-faisan-type="text" data-faisan-label="Hero Title">
+                    La confianza de saber que su capital está en <span class="text-brand-teal">manos expertas.</span>
+                </h1>
+                <p class="editable_content text-lg md:text-xl text-slate-600 mb-10 max-w-lg"
+                    data-faisan-id="hero-description" data-faisan-type="text" data-faisan-label="Hero Description">
+                    Estamos supervisados por la S.U.G.E.F. Brindamos servicios integrales de custodia y administración
+                    de fondos con los más altos estándares de seguridad.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/contacto"
+                        class="editable_content bg-brand-teal text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-teal-200 hover:scale-105 transition-transform"
+                        data-faisan-id="hero-button" data-faisan-type="text"
+                        data-faisan-label="Hero Button">Contáctenos</a>
+                    <a href="/servicios"
+                        class="editable_content border border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-colors"
+                        data-faisan-id="hero-button" data-faisan-type="text" data-faisan-label="Hero Button">Conocer
+                        más</a>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mt-12 pt-8 border-t border-slate-200/50">
+                    <p class="editable_content brand-teal text-xs uppercase tracking-widest font-bold mb-6"
+                        data-faisan-id="hero-certifications" data-faisan-type="text"
+                        data-faisan-label="Hero Certifications">- ¿Por
+                        qué escogernos?</p>
+                    <div class="flex flex-wrap gap-8 items-center transition-all">
+                        <picture>
+                            <source
+                                srcset="https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/why-choose-us-03.webp"
+                                type="image/webp">
+                            <img src="https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/why-choose-us-03.jpg"
+                                alt="Why Choose Us" class="editable_content w-full"
+                                data-faisan-id="hero-certifications-img" data-faisan-type="image"
+                                data-faisan-label="Hero Certifications Image" fetchpriority="high" width="599"
+                                height="64">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Asset (Image) -->
+            <div class="relative flex justify-center items-center py-12 md:py-0 h-full">
+                <!-- Massive glow for depth -->
+                <div
+                    class="absolute w-[120%] h-[120%] bg-brand-teal/10 rounded-full blur-[120px] md:blur-[220px] animate-pulse">
+                </div>
+
+                <div class="relative z-10 w-full flex justify-center items-center">
+                    <picture>
+                        <source media="(min-width: 768px)"
+                            srcset="https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/header-07.webp"
+                            type="image/webp">
+                        <source srcset="https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/header-07-sm.webp"
+                            type="image/webp">
+                        <img src="https://puravidaescrowandtrust.com/wp-content/uploads/2026/04/header-07-sm.jpg"
+                            alt="Pura Vida Escrow Hero Image"
+                            class="hero-img-faisan w-full h-auto md:w-[140%] lg:w-[160%] max-w-[100%] object-contain rounded-3xl transform md:translate-x-16 lg:translate-x-28 scale-110 md:scale-135 lg:scale-160 transition-all duration-1000 ease-out"
+                            data-faisan-id="hero-main-image" data-faisan-type="image"
+                            data-faisan-label="Hero Main Image" fetchpriority="high" width="450" height="342">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="about-tagline" data-faisan-type="text" data-faisan-label="About Tagline">Sobre
+                    Nosotros</span>
+                <h2 class="editable_content text-3xl md:text-4xl font-bold text-slate-900 mb-6"
+                    data-faisan-id="about-title" data-faisan-type="text" data-faisan-label="About Title">Pura Vida
+                    Escrow &amp; Trust Services LTDA</h2>
+                <p class="editable_content text-slate-600" data-faisan-id="about-description" data-faisan-type="text"
+                    data-faisan-label="About Description">Somos una estructura financiera diseñada por especialistas en
+                    transacciones de alto valor, enfocada en proteger fondos en operaciones inmobiliarias, inversión y
+                    planificación patrimonial.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-teal transition-colors">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span
+                            class="editable_content w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center text-white"
+                            data-faisan-id="about-mission-number" data-faisan-type="text"
+                            data-faisan-label="About Mission Number">1</span>
+                        <span class="editable_content" data-faisan-id="about-mission-title" data-faisan-type="text"
+                            data-faisan-label="About Mission Title">Nuestra Misión</span>
+                    </h3>
+                    <p class="editable_content text-slate-600 leading-relaxed"
+                        data-faisan-id="about-mission-description" data-faisan-type="text"
+                        data-faisan-label="About Mission Description">Proveer servicios de administración y custodia de
+                        fondos
+                        que excedan las expectativas de nuestros clientes, fundamentados en el cumplimiento normativo y
+                        la ética profesional.</p>
+                </div>
+                <div
+                    class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-teal transition-colors">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span
+                            class="editable_content w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center text-white"
+                            data-faisan-id="about-transparency-number-02" data-faisan-type="text"
+                            data-faisan-label="About Transparency Number">2</span>
+                        <span class="editable_content" data-faisan-id="about-transparency-title" data-faisan-type="text"
+                            data-faisan-label="About Transparency Title">Transparencia Total</span>
+                    </h3>
+                    <p class="editable_content text-slate-600 leading-relaxed"
+                        data-faisan-id="about-transparency-description" data-faisan-type="text"
+                        data-faisan-label="About Transparency Description">Cada proceso está documentado y es
+                        auditable, asegurando que su patrimonio esté siempre bajo los más rigurosos controles de
+                        seguridad y legalidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores Section -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="editable_content text-3xl font-bold text-slate-900 mb-4" data-faisan-id="values-title"
+                    data-faisan-type="text" data-faisan-label="Values Title">Crear un
+                    impacto positivo en nuestros clientes</h2>
+                <p class="editable_content text-slate-500 max-w-2xl mx-auto" data-faisan-id="values-description"
+                    data-faisan-type="text" data-faisan-label="Values Description">Nuestros valores fundamentales guían
+                    cada decisión y acción
+                    que tomamos.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <!-- Row 1 -->
+                <div class="value-card bg-white p-6 rounded-2xl text-center shadow-sm" style="opacity: 1;">
+                    <div
+                        class="w-12 h-12 bg-teal-50 rounded-xl mx-auto mb-4 flex items-center justify-center text-brand-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="editable_content text-sm font-bold text-slate-700"
+                        data-faisan-id="values-integrity-title" data-faisan-type="text"
+                        data-faisan-label="Values Integrity Title">Integridad</span>
+                </div>
+                <div class="value-card bg-white p-6 rounded-2xl text-center shadow-sm" style="opacity: 1;">
+                    <div
+                        class="w-12 h-12 bg-teal-50 rounded-xl mx-auto mb-4 flex items-center justify-center text-brand-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <span class="editable_content text-sm font-bold text-slate-700"
+                        data-faisan-id="values-effectiveness-title" data-faisan-type="text"
+                        data-faisan-label="Values Effectiveness Title">Eficacia</span>
+                </div>
+                <div class="value-card bg-white p-6 rounded-2xl text-center shadow-sm" style="opacity: 1;">
+                    <div
+                        class="w-12 h-12 bg-teal-50 rounded-xl mx-auto mb-4 flex items-center justify-center text-brand-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="editable_content text-sm font-bold text-slate-700"
+                        data-faisan-id="values-transparency-title" data-faisan-type="text"
+                        data-faisan-label="Values Transparency Title">Transparencia</span>
+                </div>
+                <div class="value-card bg-white p-6 rounded-2xl text-center shadow-sm" style="opacity: 1;">
+                    <div
+                        class="w-12 h-12 bg-teal-50 rounded-xl mx-auto mb-4 flex items-center justify-center text-brand-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="editable_content text-sm font-bold text-slate-700"
+                        data-faisan-id="values-empathy-title" data-faisan-type="text"
+                        data-faisan-label="Values Empathy Title">Empatía</span>
+                </div>
+                <div class="value-card bg-white p-6 rounded-2xl text-center shadow-sm" style="opacity: 1;">
+                    <div
+                        class="w-12 h-12 bg-teal-50 rounded-xl mx-auto mb-4 flex items-center justify-center text-brand-teal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="editable_content text-sm font-bold text-slate-700"
+                        data-faisan-id="values-colaboration-title" data-faisan-type="text"
+                        data-faisan-label="Values Colaboration Title">Colaboración</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calidad Section -->
+    <section class="py-24 bg-brand-dark text-white overflow-hidden relative">
+        <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+            <svg width="400" height="400" viewbox="0 0 200 200" fill="none">
+                <path d="M100 0L186.603 50V150L100 200L13.3975 150V50L100 0Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/3">
+                    <h2 class="editable_content text-3xl md:text-4xl font-bold mb-6 text-white"
+                        data-faisan-id="quality-title" data-faisan-type="text" data-faisan-label="Quality Title">Nuestra
+                        Política de Calidad</h2>
+                    <p class="editable_content text-slate-300 text-lg leading-relaxed mb-8"
+                        data-faisan-id="quality-description" data-faisan-type="text"
+                        data-faisan-label="Quality Description">
+                        Pura Vida Escrow &amp; Trust Services es una empresa comprometida con la mejora continua para
+                        alcanzar los más altos estándares de calidad y de servicio al cliente, generando la confianza y
+                        transparencia que merecen todas las partes involucradas.
+                    </p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 rounded-full flex items-center justify-center">
+                        <img class="editable_content" data-faisan-id="quality-icon" data-faisan-type="image"
+                            data-faisan-label="Quality Icon" src="/assets/images/icon-politica-calidad.png"
+                            alt="Quality" width="339" height="339">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="services-title" data-faisan-type="text"
+                    data-faisan-label="Services Title">Expertos</span>
+                <h2 class="editable_content text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+                    data-faisan-id="services-subtitle" data-faisan-type="text" data-faisan-label="Services Subtitle">
+                    Servicios Principales</h2>
+                <p class="editable_content text-slate-500 max-w-2xl mx-auto" data-faisan-id="services-description"
+                    data-faisan-type="text" data-faisan-label="Services Description">Soluciones financieras y legales
+                    diseñadas para su
+                    tranquilidad.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Escrow Card -->
+                <div
+                    class="flex flex-col justify-between group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 text-white rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img class="editable_content" data-faisan-id="services-escrow-icon" data-faisan-type="image"
+                            data-faisan-label="Services Escrow Icon" src="/assets/images/icon-servicios-01.png"
+                            alt="Escrow" width="90" height="90">
+                    </div>
+                    <h3 class="editable_content text-2xl font-bold text-slate-900 mb-4"
+                        data-faisan-id="services-escrow-title" data-faisan-type="text"
+                        data-faisan-label="Services Escrow Title">Escrow</h3>
+                    <p class="editable_content text-slate-500 mb-8" data-faisan-id="services-escrow-description"
+                        data-faisan-type="text" data-faisan-label="Services Escrow Description">Esta solución brinda
+                        transacciones seguras, transparentes e imparciales ya que Pura Vida Escrow & Trust Services,
+                        garantiza que sus fondos se resguarden en una cuenta intermediaria, asegurando protección y
+                        transparencia a lo largo del proceso. Nos aseguramos de que se cumplan todas las condiciones
+                        antes de proceder con la liberación de los fondos...</p>
+                    <a href="/servicios/#escrow"
+                        class="editable_content font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                        data-faisan-id="services-escrow-link" data-faisan-type="link"
+                        data-faisan-label="Services Escrow Link">Ver
+                        detalles <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg></a>
+                </div>
+
+                <!-- Fideicomiso Card -->
+                <div
+                    class="flex flex-col justify-between group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 text-white rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img class="editable_content" data-faisan-id="services-fideicomisos-icon"
+                            data-faisan-type="image" data-faisan-label="Services Fideicomisos Icon"
+                            src="/assets/images/icon-servicios-02.png" alt="Fideicomisos" width="90" height="90">
+                    </div>
+                    <h3 class="editable_content text-2xl font-bold text-slate-900 mb-4"
+                        data-faisan-id="services-fideicomisos-title" data-faisan-type="text"
+                        data-faisan-label="Services Fideicomisos Title">Fideicomisos</h3>
+                    <p class="editable_content text-slate-500 mb-8" data-faisan-id="services-fideicomisos-content"
+                        data-faisan-type="text" data-faisan-label="Services Fideicomisos Content">Nos especializamos en
+                        la administración segura y confiable de activos mediante contratos de fideicomiso. Ya sea para
+                        brindar garantía, proteger su patrimonio o planificar la sucesión de sus bienes, usted puede
+                        confiarnos la gestión de sus activos...</p>
+                    <a href="/servicios/#fideicomisos"
+                        class="editable_content text-brand-teal font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                        data-faisan-id="services-fideicomisos-link" data-faisan-type="link"
+                        data-faisan-label="Services Fideicomisos Link">Ver detalles <svg class="w-4 h-4" fill="none"
+                            stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg></a>
+                </div>
+
+                <!-- Inversiones Card -->
+                <div
+                    class="flex flex-col justify-between group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 text-white rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img class="editable_content" data-faisan-id="services-inversiones-icon"
+                            data-faisan-type="image" data-faisan-label="Services Inversiones Icon"
+                            src="/assets/images/icon-servicios-03.png" alt="Fideicomiso Testamentario" width="90"
+                            height="90">
+                    </div>
+                    <h3 class="editable_content text-2xl font-bold text-slate-900 mb-4"
+                        data-faisan-id="services-inversiones-title" data-faisan-type="text"
+                        data-faisan-label="Services Inversiones Title">Fideicomiso Testamentario</h3>
+                    <p class="editable_content text-slate-500 mb-8" data-faisan-id="services-inversiones-content"
+                        data-faisan-type="text" data-faisan-label="Services Inversiones Content">Una solución confiable
+                        y personalizada para la planificación de la distribución de su patrimonio. Con nuestro servicio
+                        de fideicomiso testamentario, usted tiene la opción de designarnos como administradores de su
+                        patrimonio y asegurar que sus activos sean entregados a los beneficiarios con las condiciones
+                        establecidas....</p>
+                    <a href="/servicios/#fideicomisos-testamentarios"
+                        class="editable_content text-brand-teal font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                        data-faisan-id="services-inversiones-link" data-faisan-type="link"
+                        data-faisan-label="Services Inversiones Link">Ver detalles <svg class="w-4 h-4" fill="none"
+                            stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-slate-50 border-y border-slate-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="max-w-[600px]">
+                <h4 class="text-2xl font-bold text-slate-900 mb-2">ERP Lawyers &amp; Associates LTDA</h4>
+                <p class="text-slate-500">Pura Vida Escrow &amp; Trust Services es una empresa que cuenta con el
+                    respaldo de
+                    ERP Lawyers &amp; Associates Ltda, una firma con más de 15 años de brindar servicios legales y
+                    notariales integrales para todos sus clientes, y con vasta experiencia en transacciones que
+                    involucran transacciones inmobiliarias, estructuras fiduciarias, y también en la elaboración
+                    de contratos de Fideicomiso de diferente tipo, tales como de Administración, de Garantía, de
+                    Inversión y Patrimonial.</p>
+            </div>
+            <a href="https://erplawyers.com/en/home" target="_blank"
+                class="bg-brand-teal text-white px-8 py-3 rounded-full font-bold hover:bg-teal-600 transition-colors shadow-lg shadow-teal-100">Visitar
+                Sitio Web</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <!-- Contact Form -->
+            <div data-faisan-component="contact-form.html"></div>
+
+        </div>
+
+        <!-- Mock Map Background -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mt-40">
+            <svg width="100%" height="100%" viewbox="0 0 100 100" preserveaspectratio="none">
+                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+                <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div data-faisan-component="newsletter.html" data-faisan-title="Suscríbete a nuestro Newsletter mensual"
+        data-faisan-button_text="Suscribirse" data-faisan-email_placeholder="Tu correo electrónico"
+        data-faisan-captcha_text="No soy un Robot"></div>
+
+    <!-- Footer -->
+    <div data-faisan-component="footer.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
+        });
+    </script>
+</body>
+
+</html>

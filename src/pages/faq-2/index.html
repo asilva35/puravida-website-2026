@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --brand-teal: #38b2ac;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --brand-white: #ffffff;
+            --brand-gray: #f1f5f9;
+            --brand-gray-dark: #64748b;
+            --brand-gray-light: #94a3b8;
+            --brand-gray-lighter: #cbd5e1;
+            --brand-gray-lightest: #e2e8f0;
+            --brand-gray-lightest: #e2e8f0;
+            --text-color: #334155;
+            --text-color-light: #64748b;
+            --text-color-lighter: #94a3b8;
+            --text-color-lightest: #cbd5e1;
+            --text-color-lightest: #e2e8f0;
+            --text-color-lightest: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        /*SKELETON SCREEN*/
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Clase para desvanecer */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+
+        /*END - SKELETON SCREEN*/
+
+        .brand-teal {
+            color: var(--brand-teal);
+        }
+
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+
+        .bg-brand-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .border-brand-teal {
+            border-color: var(--brand-teal);
+        }
+
+        /* Efectos de vidrio y profundidad */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.05), transparent 40%);
+        }
+
+        /* Utilidad para las tarjetas de valores */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 178, 172, 0.1);
+        }
+    </style>
+
+    <script src="../../dev-loader.js"></script>
+</head>
+
+<body>
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
+    <!-- Top Bar -->
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/faq" data-faisan-url_en="/en/faq-2"></div>
+
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/en/" data-faisan-label_link_home="Home"
+        data-faisan-link_services="/en/services" data-faisan-label_link_services="Services"
+        data-faisan-link_faq="/en/faq" data-faisan-label_link_faq="Faq" data-faisan-link_blog="/en/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/en/contact"
+        data-faisan-label_link_contact="Contact" data-faisan-placeholder_search="Search..."></div>
+
+    <section id="faq" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative background -->
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-teal-50/50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-slate-50/50 rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="faq-tagline" data-faisan-type="text" data-faisan-label="FAQ Tagline">Help
+                    Center</span>
+                <h1 class="editable_content text-4xl md:text-5xl font-extrabold text-slate-900 mb-8"
+                    data-faisan-id="faq-title" data-faisan-type="text" data-faisan-label="FAQ Title">Frequently Asked
+                    Questions</h1>
+                <p class="editable_content text-slate-500 text-lg" data-faisan-id="faq-description"
+                    data-faisan-type="text" data-faisan-label="FAQ Description">Get answers to your questions about our
+                    custody, fund management, and trust services.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+
+                <!-- FAQ Item 1 -->
+                <div
+                    class="faq-item group bg-slate-50 border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 hover:border-brand-teal hover:bg-white hover:shadow-xl">
+                    <button
+                        class="faq-toggle w-full px-8 py-6 flex items-center justify-between text-left focus:outline-none">
+                        <h3 class="editable_content text-xl font-bold text-slate-900 pr-8"
+                            data-faisan-id="faq-item-question-01" data-faisan-type="text"
+                            data-faisan-label="FAQ Item Question 01">Is PV Escrow & Trust Services an authorized
+                            financial entity by SUGEF?</h3>
+                        <span
+                            class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-teal shadow-sm transition-transform duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <div class="px-8 pb-8 pt-2">
+                            <div class="h-px bg-slate-100 mb-6"></div>
+                            <p class="editable_content text-slate-600 leading-relaxed mb-4"
+                                data-faisan-id="faq-item-answer-01" data-faisan-type="text"
+                                data-faisan-label="FAQ Item Answer 01">Yes, PV Escrow & Trust Services has the
+                                authorization and supervision of SUGEF (Superintendencia General de Entidades
+                                Financieras). We are committed to strictly complying with all parameters and
+                                requirements established by SUGEF, which has allowed us to obtain the necessary
+                                authorization to operate. To verify our registration and compliance, we invite you to
+                                visit the following link: </p>
+                            <a href="https://www.sugef.fi.cr/SIPO.Reportes" target="_blank"
+                                class="inline-flex items-center gap-2 text-brand-teal font-bold hover:gap-3 transition-all">
+                                Verify in SIPO SUGEF
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="02"
+                    data-faisan-question="What is an Escrow Service and what is it used for?"
+                    data-faisan-answer="It is a fund custody service in which a neutral and trustworthy third party is responsible for keeping the funds from a transaction secure until the agreed-upon conditions are met. The escrow service ensures that the funds are released and distributed according to the instructions of the involved parties.">
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="03"
+                    data-faisan-question="Why are escrow services used in real estate transactions?"
+                    data-faisan-answer="Escrow services are used in real estate transactions due to their ability to provide security and protection to both the buyer and the seller.">
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="04"
+                    data-faisan-question="What does the Escrow service guarantee in real estate transactions?"
+                    data-faisan-answer="By involving an impartial third party, the escrow agent acts as an intermediary to ensure that the transaction takes place fairly and transparently. Additionally, they handle coordinating payments and transfers securely, ensuring that the seller receives the agreed-upon payment and the buyer acquires ownership of the property.">
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="05"
+                    data-faisan-question="What is the role of the escrow agent in the transaction?"
+                    data-faisan-answer="The escrow agent plays a crucial role in the transaction by acting as an impartial intermediary. Their main function is to ensure the security of funds and documentation, guaranteeing compliance with the agreed-upon conditions and facilitating a secure transfer of the property.">
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="06"
+                    data-faisan-question="What documentation is required to process an Escrow service?"
+                    data-faisan-answer="To process an escrow service, the signing of the Escrow contract is required, along with documents demonstrating the identity of the parties and any documentation supporting the origin of the funds to ensure their legality and compliance with all regulations.">
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="07"
+                    data-faisan-question="What is a Trust and what is it used for?"
+                    data-faisan-answer="A trust is a contract in which the settlor transfers ownership of assets to a person or entity called the trustee (Pura Vida Escrow & Trust Services), who administers them for the benefit of a third party, known as the beneficiary. It serves to protect and manage assets properly, ensuring their use in accordance with the instructions and conditions set forth in the contract. It is an effective tool for estate planning, asset protection, and the administration of resources for a specific purpose.">
+                </div>
+
+                <!-- FAQ Item 8 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="08"
+                    data-faisan-question="What is a management trust and what is it used for?"
+                    data-faisan-answer="A management trust is a type of trust in which the trustee is responsible for managing and overseeing assets on behalf of the settlor. The primary goal of a management trust is to ensure efficient and professional management of the assets, ensuring their preservation and benefit for the designated beneficiaries.">
+                </div>
+
+                <!-- FAQ Item 9 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="09"
+                    data-faisan-question="What is a guarantee trust and what is it used for?"
+                    data-faisan-answer="A guarantee trust is a contract in which one party, known as the trustee, is responsible for holding and managing certain assets or properties for the benefit of another party, known as the beneficiary. The primary purpose of a guarantee trust is to ensure the fulfillment of an obligation or guarantee the payment of a debt. The trustee acts as a custodian of the assets and uses them according to the instructions established in the trust agreement.">
+                </div>
+
+                <!-- FAQ Item 10 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="10"
+                    data-faisan-question="What is a testamentary trust and what is it used for?"
+                    data-faisan-answer="A testamentary trust is a contract that allows an individual, called the settlor or testator, to transfer their assets and properties to a trustee to be managed and distributed according to their wishes while they are alive and/or after their death. This type of trust helps avoid the probate process and can assist in protecting and appropriately distributing the assets of the deceased.">
+                </div>
+
+                <!-- FAQ Item 11 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="11"
+                    data-faisan-question="What is a trustee?"
+                    data-faisan-answer="A trustee is an individual or entity appointed to manage assets or properties on behalf of another person or entity, known as the beneficiary. The trustee has the legal and ethical responsibility to protect and manage the assets or properties of the beneficiary appropriately, always acting in their best interest and in accordance with the terms agreed upon in the trust agreement.">
+                </div>
+
+                <!-- FAQ Item 12 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="12"
+                    data-faisan-question="What is a trust agreement?"
+                    data-faisan-answer="A trust agreement is a legal contract involving three parties: the settlor (who contributes assets), the trustee (who manages the assets transferred into the trust), and the beneficiary (the ultimate recipient of the trust’s assets). This contract outlines the terms and conditions under which the transferred assets will be administered and distributed within the trust. The trust agreement delineates the rights and responsibilities of all involved parties and provides a legal framework for the proper management of assets.">
+                </div>
+
+                <!-- FAQ Item 13 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="13"
+                    data-faisan-question="What is the purpose of fund custody?"
+                    data-faisan-answer="One of the main purposes of fund custody is to ensure the security and protection of funds in a transaction. By depositing funds into an Escrow account, an additional layer of security is created, minimizing the risk of fraud or misuse of funds. Moreover, fund custody can facilitate transparency in transactions and ensure that payments are made as agreed.">
+                </div>
+
+                <!-- FAQ Item 14 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="14"
+                    data-faisan-question="Why do I have to submit the Source of funds documentation?"
+                    data-faisan-answer="The request for documentation regarding the origin of funds is a standard practice in trust and escrow services, aiming to comply with regulations and legal requirements established to prevent money laundering and terrorist financing. By seeking information about the origin of funds, the goal is to verify that the assets to be placed in the trust or escrow account are legitimate and not associated with illicit activities.">
+                </div>
+
+                <!-- FAQ Item 15 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="15"
+                    data-faisan-question="How long does it take for funds to be credited to the Escrow Account?"
+                    data-faisan-answer="The time to credit funds to an escrow account can vary based on several factors, such as the transfer method used, the policies of the trust and escrow services entity, as well as the location of the funds. In some cases, crediting may occur within hours or days, while in other cases, it may take longer, especially for international transfers. 
+With Pura Vida Escrow and Trust, generally, the fund crediting process takes from 3 to 5 business days from the moment the bank receives the funds. However, it’s important to note that this timeframe may be subject to variations depending on individual circumstances.">
+                </div>
+
+                <!-- FAQ Item 16 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="16"
+                    data-faisan-question="What is your experience in trust management?"
+                    data-faisan-answer="We have extensive experience in trust management, supported by over 100 satisfied clients. Throughout our years working in trust sector, we have gained deep knowledge and skills to provide effective and secure solutions to our clients.">
+                </div>
+
+                <!-- FAQ Item 17 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="17"
+                    data-faisan-question="What decision-making process is followed for the management and distribution of assets in a trust?"
+                    data-faisan-answer="We rigorously follow the decision-making process outlined in the trust agreement for the administration and distribution of assets. Our priority is to ensure compliance with the agreed-upon terms and conditions among all parties involved. Through a transparent and diligent approach, we carefully assess the provisions of the contract.">
+                </div>
+
+                <!-- FAQ Item 18 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="18"
+                    data-faisan-question="What is your approach to ensuring transparency and effective communication with trust beneficiaries?""
+                    data-faisan-answer=" We establish a relationship of trust by providing regular and clear updates on
+                    asset management. We offer access to relevant information, respond promptly to your questions, and
+                    maintain detailed transaction records.">
+                </div>
+
+                <!-- FAQ Item 19 -->
+                <div data-faisan-component="faq-item.html" data-faisan-itemnumber="19"
+                    data-faisan-question="Do I have to be in Costa Rica to open my Escrow Account?"
+                    data-faisan-answer="At Pura Vida Escrow and Trust Services, it is not necessary for the person to be physically in Costa Rica to open an Escrow Account. We have sufficient technological means to carry out the process remotely, using communication technologies and electronic means to send and receive the required documentation.">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <!-- Contact Form -->
+            <div data-faisan-component="contact-form-en.html"></div>
+
+        </div>
+
+        <!-- Mock Map Background -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mt-40">
+            <svg width="100%" height="100%" viewbox="0 0 100 100" preserveaspectratio="none">
+                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+                <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div data-faisan-component="newsletter.html" data-faisan-title="Don&apos;t miss our monthly news"
+        data-faisan-button_text="Subscribe" data-faisan-email_placeholder="Your email"
+        data-faisan-captcha_text="I&apos;m not a Robot">
+    </div>
+
+    <!-- Footer -->
+    <div data-faisan-component="footer-en.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

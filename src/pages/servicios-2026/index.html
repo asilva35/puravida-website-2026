@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --brand-teal: #38b2ac;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+            --brand-white: #ffffff;
+            --brand-gray: #f1f5f9;
+            --brand-gray-dark: #64748b;
+            --brand-gray-light: #94a3b8;
+            --brand-gray-lighter: #cbd5e1;
+            --brand-gray-lightest: #e2e8f0;
+            --brand-gray-lightest: #e2e8f0;
+            --text-color: #334155;
+            --text-color-light: #64748b;
+            --text-color-lighter: #94a3b8;
+            --text-color-lightest: #cbd5e1;
+            --text-color-lightest: #e2e8f0;
+            --text-color-lightest: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        /*SKELETON SCREEN*/
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Clase para desvanecer */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+            pointer-events: none;
+        }
+
+        /*END - SKELETON SCREEN*/
+
+        .brand-teal {
+            color: var(--brand-teal);
+        }
+
+        .bg-brand-teal {
+            background-color: var(--brand-teal);
+        }
+
+        .bg-brand-dark {
+            background-color: var(--brand-dark);
+        }
+
+        .border-brand-teal {
+            border-color: var(--brand-teal);
+        }
+
+        /* Efectos de vidrio y profundidad */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.05), transparent 40%);
+        }
+
+        /* Utilidad para las tarjetas de valores */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 178, 172, 0.1);
+        }
+    </style>
+    <script src="../../dev-loader.js"></script>
+</head>
+
+<body>
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
+    <!-- Top Bar -->
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/servicios" data-faisan-url_en="/en/services"></div>
+
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/" data-faisan-label_link_home="Inicio"
+        data-faisan-link_services="/servicios" data-faisan-label_link_services="Servicios" data-faisan-link_faq="/faq"
+        data-faisan-label_link_faq="Preguntas Frecuentes" data-faisan-link_blog="/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/contacto"
+        data-faisan-label_link_contact="Contacto" data-faisan-placeholder_search="Buscar..."></div>
+
+    <section id="main" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div
+            class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-teal-50 rounded-full blur-3xl opacity-50">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-slate-50 rounded-full blur-3xl opacity-50">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <span class="editable_content text-brand-teal font-bold text-sm tracking-widest uppercase mb-4 block"
+                    data-faisan-id="services-detail-tagline" data-faisan-type="text"
+                    data-faisan-label="Services Detail Tagline">Portafolio de Especialidades</span>
+                <h1 class="editable_content text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight"
+                    data-faisan-id="services-detail-title" data-faisan-type="text"
+                    data-faisan-label="Services Detail Title">
+                    SERVICIOS DE ESCROW INMOBILIARIO Y FIDEICOMISOS
+                </h1>
+                <p class="editable_content text-slate-500 text-lg md:text-xl leading-relaxed"
+                    data-faisan-id="services-detail-description" data-faisan-type="text"
+                    data-faisan-label="Services Detail Description">
+                    En Puravida Escrow & Trust, nos comprometemos a brindar servicios integrales de custodia y
+                    administración
+                    de fondos con los más altos estándares de seguridad y transparencia.
+                </p>
+            </div>
+
+            <div id="escrow" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Escrow Card -->
+                <div
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-01.png" alt="Escrow" class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Escrow</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Esta solución brinda transacciones seguras, transparentes e imparciales ya que Pura Vida Escrow
+                        & Trust Services, garantiza que sus fondos se resguarden en una cuenta intermediaria, asegurando
+                        protección y transparencia a lo largo del proceso. Nos aseguramos de que se cumplan todas las
+                        condiciones antes de proceder con la liberación de los fondos.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Personas físicas o jurídicas que realicen transacciones
+                            con riesgo intrínseco por sus características o valor.</p>
+                    </div>
+                </div>
+
+                <!-- Escrow Inmobiliario Card -->
+                <div id="escrow-inmobiliario"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-02.png" alt="Escrow Inmobiliario"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Escrow Inmobiliario</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Nuestro servicio de escrow para compra de bienes inmuebles o desarrollos inmobiliarios, asegura
+                        una transacción, ágil, segura y transparente. Actuamos como intermediarios, facilitando
+                        desembolsos totales o parciales de fondos a medida que lo acuerdan las partes. Protegemos sus
+                        intereses y garantizamos un proceso fluido en colaboración con todas las partes involucradas
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Brokers inmobiliarios que desean brindar transacciones
+                            seguras, ágiles y transparentes a sus clientes, personas físicas o jurídicas que deseen
+                            adquirir un bien en Costa Rica y/o inversores que requieran de ayuda para estructurar un
+                            proyecto inmobiliario.</p>
+                    </div>
+                </div>
+
+                <!-- Escrow Para Servicios Card -->
+                <div id="escrow-servicios"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-03.png" alt="Escrow Para Servicios"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Escrow Para Servicios</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Actuamos como intermediarios para garantizar pagos seguros en la adquisición de servicios o
+                        contrataciones. Nuestra cuenta segura y confiable garantiza que los desembolsos de fondos se
+                        realicen de acuerdo con las condiciones acordadas, protegiendo los intereses tanto del proveedor
+                        como del comprador y asegurando la satisfacción de ambas partes.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Empresas de desarrollo de software, e-commerce,
+                            marketplace y servicios en general.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso Card -->
+                <div id="fideicomiso"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-04.png" alt="Fideicomiso"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Fideicomiso</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Nos especializamos en la administración segura y confiable de activos mediante contratos de
+                        fideicomiso. Ya sea para brindar garantía, proteger su patrimonio o planificar la sucesión de
+                        sus bienes, usted puede confiarnos la gestión de sus activos. En el contrato de fideicomiso, se
+                        establecen los términos y condiciones para administrar los activos fideicometidos y para
+                        distribuir los beneficios a los fideicomisarios (beneficiarios).
+                        <br /><br />
+                        Como fiduciarios, cumplimos con
+                        lealtad y diligencia, siguiendo las instrucciones del fideicomitente, quien es la persona que
+                        aporta los bienes.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Personas físicas o jurídicas que quieran asegurarse que
+                            sus bienes serán bien administrados y gestionados según las instrucciones que se establezcan
+                            dentro del contrato de fideicomiso.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso de Garantía Card -->
+                <div id="fideicomiso-garantia"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-05.png" alt="Fideicomiso de Garantía"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Fideicomiso de Garantía</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Nos especializamos en ofrecer servicios de administración de fideicomisos de garantía. Somos
+                        expertos en brindar soluciones confiables para respaldar obligaciones financieras pendientes. En
+                        este tipo de fideicomiso, el fideicomitente pone su propiedad o activos en propiedad fiduciaria
+                        como garantía del cumplimiento de una deuda u obligación.
+                        <br /><br />
+                        Trabajamos de cerca con nuestros clientes, brindando asesoramiento especializado y diseñando
+                        acuerdos seguros que protejan los intereses de todas las partes involucradas.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Instituciones crediticias, bancos, sociedades y
+                            personas que tomen en garantía propiedades de sus clientes.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso de Administración Card -->
+                <div id="fideicomiso-administracion"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform text-brand-teal">
+                        <img src="/assets/images/icon-servicios-06.png" alt="Fideicomiso"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Fideicomiso de Administración</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Descubra los beneficios de nuestro servicio de fideicomiso de administración, una opción segura
+                        y confiable para la gestión de sus bienes. En este tipo de fideicomiso, el fideicomitente
+                        transfiere al fiduciario la responsabilidad de administrar y manejar directamente sus activos.
+                        <br /><br />
+                        Nuestro equipo se encarga de gestionar sus bienes de acuerdo con sus necesidades y objetivos. Si
+                        necesita gestionar propiedades, inversiones u otros activos, nuestro servicio de fideicomiso de
+                        administración está diseñado para brindarle una solución completa y personalizada que se ajuste
+                        a sus necesidades.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Personas físicas o jurídicas que deseen que un tercero
+                            administre sus activos según ciertos objetivos y necesidades.</p>
+                    </div>
+                </div>
+
+                <!-- Fideicomiso Testamentario Card -->
+                <div id="fideicomiso-testamentario"
+                    class="value-card group p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-300 flex flex-col h-full lg:col-start-2">
+                    <div
+                        class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <img src="/assets/images/icon-servicios-07.png" alt="Fideicomiso Testamentario"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">Fideicomiso Testamentario</h2>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Una solución confiable y personalizada para la planificación de la distribución de su
+                        patrimonio. Con nuestro servicio de fideicomiso testamentario, usted tiene la opción de
+                        designarnos como administradores de su patrimonio y asegurar que sus activos sean entregados a
+                        los beneficiarios con las condiciones establecidas.
+                        <br /><br />
+                        Nuestro equipo especializado le brinda un asesoramiento experto y se compromete a garantizar la
+                        correcta ejecución de sus instrucciones. Con nuestra experiencia y dedicación, ofrecemos
+                        tranquilidad y protección en el proceso de distribución de sus bienes, brindando seguridad y
+                        respaldo a sus seres queridos.
+                    </p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Dirigido
+                            a:</span>
+                        <p class="text-sm text-slate-500 italic">Personas físicas que deseen establecer instrucciones
+                            precisas y específicas de cómo administrar y distribuir sus bienes en vida o en su ausencia
+                            y que valoren la agilidad en caso de necesitar realizar cambios en las mismas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <!-- Contact Form -->
+            <div data-faisan-component="contact-form.html"></div>
+
+        </div>
+
+        <!-- Mock Map Background -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mt-40">
+            <svg width="100%" height="100%" viewbox="0 0 100 100" preserveaspectratio="none">
+                <path d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+                <path d="M0,70 Q25,50 50,70 T100,70" fill="none" stroke="#38b2ac" stroke-width="0.5"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div data-faisan-component="newsletter.html" data-faisan-title="No te pierdas nuestras noticias mensuales"
+        data-faisan-button_text="Suscribirse" data-faisan-email_placeholder="Tu correo electrónico"
+        data-faisan-captcha_text="No soy un Robot"></div>
+
+    <!-- Footer -->
+    <div data-faisan-component="footer.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
