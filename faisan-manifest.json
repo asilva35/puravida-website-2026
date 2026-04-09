@@ -77,7 +77,7 @@
       "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/03/icon-servicios-03.png"
     },
     "pages/home-page-draft-2026-en": {
-      "hash": "9b8fc88358695e10b4675bfaac767b68"
+      "hash": "54edd94b0338f90a5867cbcc6521a36e"
     },
     "pages/home-page-draft-2026": {
       "hash": "54310f50cf207b9bb311344f3f1039a9"
@@ -86,16 +86,16 @@
       "hash": "10f666f2e7ad5c172fcfb8174a81e0c2"
     },
     "pages/servicios-2026-en": {
-      "hash": "06cb50c7c49d9e08b5dfaf82aac6be45"
+      "hash": "446482a115a857907989fd82ae8d7b1b"
     },
     "pages/servicios-2026": {
-      "hash": "a00896e7a6ff7e6c89419d077635807a"
+      "hash": "213710dbfc0af52ba5eff1bc33661b38"
     },
     "templates/post-template": {
       "hash": "9f527a78a4d0e894f9d54ef142ba5fc9"
     },
     "wp_plugins/puravidaescrow": {
-      "hash": "00da437aeb7cde0404acfcc0671e3a48"
+      "hash": "6164f21bff8cb59f4c3ef5ce774eef0a"
     },
     "assets/images/icon-servicios-04.png": {
       "hash": "e4ee765031d896b2d033ecc32a6fed22",
@@ -117,13 +117,19 @@
       "hash": "8de669e02354d55f816c2d31d63089d7"
     },
     "pages/contact": {
-      "hash": "e580a629a36c475e3d6be9f76e5974d8"
+      "hash": "0c1fcd5e7befa3db24da552b9736dbd9"
     },
     "pages/faq": {
       "hash": "4c03e91273ec176e0f164ff89b614a3d"
     },
     "pages/faq-2": {
-      "hash": "0618aa4fa821c0254e2fa5661e7be7eb"
+      "hash": "5593f51472011176581650bb5b96bfd1"
+    },
+    "pages/servicios": {
+      "hash": "213710dbfc0af52ba5eff1bc33661b38"
+    },
+    "pages/services": {
+      "hash": "446482a115a857907989fd82ae8d7b1b"
     }
   }
 }

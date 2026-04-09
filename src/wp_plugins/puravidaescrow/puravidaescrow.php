@@ -184,8 +184,8 @@ function puravidaescrow_redirect_pages() {
     $pages = array(
         "inicio"=>'index.html',
         "home"=>'/en/home.html',
-        "servicios"=>'/servicios.html',
-        "services"=>'/en/services.html',
+        //"servicios"=>'/servicios.html',
+        //"services"=>'/en/services.html',
         "ok"=>'ok.html',
         "magazine"=>'magazine.html',
         "panorama-inmobiliario-en-costa-rica-para-el-2025"=>'panorama-inmobiliario-en-costa-rica-para-el-2025.html',
