@@ -182,8 +182,8 @@ remove_action( 'wp_head', 'feed_links_extra', 3 );
 //REDIRECT PAGES OF THE SITE
 function puravidaescrow_redirect_pages() {
     $pages = array(
-        "inicio"=>'index.html',
-        "home"=>'/en/home.html',
+        //"inicio"=>'index.html',
+        //"home"=>'/en/home.html',
         //"servicios"=>'/servicios.html',
         //"services"=>'/en/services.html',
         "ok"=>'ok.html',

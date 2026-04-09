@@ -95,7 +95,7 @@
       "hash": "9f527a78a4d0e894f9d54ef142ba5fc9"
     },
     "wp_plugins/puravidaescrow": {
-      "hash": "6164f21bff8cb59f4c3ef5ce774eef0a"
+      "hash": "c2cc32834e7f67b269ef46be8dab43f7"
     },
     "assets/images/icon-servicios-04.png": {
       "hash": "e4ee765031d896b2d033ecc32a6fed22",
@@ -130,6 +130,12 @@
     },
     "pages/services": {
       "hash": "446482a115a857907989fd82ae8d7b1b"
+    },
+    "pages/inicio": {
+      "hash": "54310f50cf207b9bb311344f3f1039a9"
+    },
+    "pages/home": {
+      "hash": "54edd94b0338f90a5867cbcc6521a36e"
     }
   }
 }
