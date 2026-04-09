@@ -178,4 +178,36 @@ add_action('do_feed_atom_comments', 'puravidaescrow_disable_feeds', 1);
 remove_action( 'wp_head', 'feed_links', 2 );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 
+
+//REDIRECT PAGES OF THE SITE
+function puravidaescrow_redirect_pages() {
+    $pages = array(
+        "inicio"=>'index.html',
+        "home"=>'/en/home.html',
+        "servicios"=>'/servicios.html',
+        "services"=>'/en/services.html',
+        "ok"=>'ok.html',
+        "magazine"=>'magazine.html',
+        "panorama-inmobiliario-en-costa-rica-para-el-2025"=>'panorama-inmobiliario-en-costa-rica-para-el-2025.html',
+        "costa-rican-real-estate-landscape-for-2025"=>'/en/costa-rican-real-estate-landscape-for-2025.html',
+        "situacion-inmobiliaria-en-santa-teresa"=>'situacion-inmobiliaria-en-santa-teresa.html',
+        "real-estate-situation-in-santa-teresa"=>'/en/real-estate-situation-in-santa-teresa.html',
+        "sean-diddy-combs-es-uno-de-los-duenos-de-x-corp-a-k-a-twitter"=>'sean-diddy-combs-es-uno-de-los-duenos-de-x-corp-a-k-a-twitter.html',
+        "sean-diddy-combs-is-one-of-the-owners-of-x-corp-a-k-a-twitter"=>'/en/sean-diddy-combs-is-one-of-the-owners-of-x-corp-a-k-a-twitter.html',
+        "no-hagas-una-inversion-inmobiliaria-sin-antes-leer-esto"=>'no-hagas-una-inversion-inmobiliaria-sin-antes-leer-esto.html',
+        "dont-make-a-real-estate-investment-without-reading-this-first"=>'/en/dont-make-a-real-estate-investment-without-reading-this-first.html',
+        "invertir-en-bienes-raices-en-costa-rica-5-pasos-clave"=>'invertir-en-bienes-raices-en-costa-rica-5-pasos-clave.html',
+        "experience-the-pura-vida-real-estate-investment-guide-in-costa-rica-for-foreigners"=>'/en/experience-the-pura-vida-real-estate-investment-guide-in-costa-rica-for-foreigners.html',
+    );
+    
+    foreach($pages as $key => $value){
+        if (is_page($key) || is_single($key)) { 
+            include ABSPATH . 'puravidascrowandtrustdist/' . $value;
+            exit;
+        }
+    }
+    
+}
+add_action('template_redirect', 'puravidaescrow_redirect_pages');
+
 ?>
