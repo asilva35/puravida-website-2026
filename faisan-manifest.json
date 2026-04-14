@@ -95,7 +95,7 @@
       "hash": "9f527a78a4d0e894f9d54ef142ba5fc9"
     },
     "wp_plugins/puravidaescrow": {
-      "hash": "c2cc32834e7f67b269ef46be8dab43f7"
+      "hash": "8323d39ae2aa4c3c8473e68ce33bb051"
     },
     "assets/images/icon-servicios-04.png": {
       "hash": "e4ee765031d896b2d033ecc32a6fed22",
@@ -117,25 +117,31 @@
       "hash": "8de669e02354d55f816c2d31d63089d7"
     },
     "pages/contact": {
-      "hash": "0c1fcd5e7befa3db24da552b9736dbd9"
+      "hash": "d7efd28d8fbf4ca7cb276d2681bf979e"
     },
     "pages/faq": {
       "hash": "4c03e91273ec176e0f164ff89b614a3d"
     },
     "pages/faq-2": {
-      "hash": "5593f51472011176581650bb5b96bfd1"
+      "hash": "bc982d52485f5027b4c30dfbea8afb7c"
     },
     "pages/servicios": {
       "hash": "213710dbfc0af52ba5eff1bc33661b38"
     },
     "pages/services": {
-      "hash": "446482a115a857907989fd82ae8d7b1b"
+      "hash": "03d4e108856c548b53aa9261e73c373b"
     },
     "pages/inicio": {
       "hash": "54310f50cf207b9bb311344f3f1039a9"
     },
     "pages/home": {
-      "hash": "54edd94b0338f90a5867cbcc6521a36e"
+      "hash": "3b93f71399710ac734a842b988a6f585"
+    },
+    "pages/blog": {
+      "hash": "a3f748ab7a9ccad9ebae267bad684b2e"
+    },
+    "pages/blogen": {
+      "hash": "ac58119f96b1b0699f113009de154a05"
     }
   }
 }
