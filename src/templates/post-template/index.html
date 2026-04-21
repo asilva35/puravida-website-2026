@@ -178,6 +178,15 @@
             margin-bottom: 0.5rem;
         }
 
+        .post-content li h1,
+        .post-content li h2,
+        .post-content li h3,
+        .post-content li h4,
+        .post-content li h5,
+        .post-content li h6 {
+            display: inline;
+        }
+
         .post-content blockquote {
             margin-bottom: 1rem;
             padding-left: 1rem;
@@ -352,7 +361,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="editable_content text-3xl md:text-4xl font-bold text-slate-900 mb-6"
                     data-faisan-id="related-posts-title" data-faisan-type="text"
-                    data-faisan-label="Related Posts Title">Related Posts</h2>
+                    data-faisan-label="Related Posts Title">Related Posts:</h2>
             </div>
             <div class="max-w-3xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {{related_posts}}
