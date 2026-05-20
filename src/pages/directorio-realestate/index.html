@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directorio de Brokers | Pura Vida Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         :root {
             --brand-teal: #38b2ac;
@@ -76,66 +75,24 @@
             border-radius: 10px;
         }
     </style>
+    <script src="../../dev-loader.js"></script>
 </head>
 
 <body>
 
+    <!-- Skeleton -->
+    <div data-faisan-component="skeleton.html"></div>
+
     <!-- Top Bar -->
-    <div class="hidden lg:block bg-white border-b border-slate-100 py-2 text-xs text-slate-500">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-6">
-                <span class="flex items-center gap-1">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                        </path>
-                    </svg>
-                    <a href="tel:+50670228103">+506 7022 8103</a>
-                </span>
-                <span class="flex items-center gap-1">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                        </path>
-                    </svg>
-                    <a href="mailto:info@puravidaescrow.com">directorio@puravida.com</a>
-                </span>
-            </div>
-            <div class="flex items-center gap-4">
-                <button class="hover:text-brand-teal transition-colors">ES</button>
-                <div class="h-3 w-px bg-slate-200"></div>
-                <button class="hover:text-brand-teal transition-colors">EN</button>
-            </div>
-        </div>
-    </div>
+    <div data-faisan-component="top-bar.html" data-faisan-url_es="/" data-faisan-url_en="/en/"></div>
 
-    <!-- Nav -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <a href="#" class="flex flex-col leading-none">
-                    <span class="text-brand-teal font-black text-2xl tracking-tight">PURA VIDA</span>
-                    <span class="text-slate-500 text-[10px] tracking-[0.2em] font-bold">BROKER NETWORK</span>
-                </a>
-            </div>
 
-            <div class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
-                <a href="#" class="hover:text-brand-teal transition-colors">Explorar</a>
-                <a href="#" class="hover:text-brand-teal transition-colors">Zonas Populares</a>
-                <a href="#" class="hover:text-brand-teal transition-colors">Recursos</a>
-                <a href="#"
-                    class="bg-brand-teal text-white px-5 py-2 rounded-full hover:bg-teal-600 transition-all shadow-md shadow-teal-100">Registrarme
-                    como Broker</a>
-            </div>
-
-            <button id="mobile-menu-btn" class="md:hidden p-2">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
-        </nav>
-    </header>
+    <!-- Header / Nav -->
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/" data-faisan-label_link_home="Inicio"
+        data-faisan-link_services="/servicios" data-faisan-label_link_services="Servicios" data-faisan-link_faq="/faq"
+        data-faisan-label_link_faq="Preguntas Frecuentes" data-faisan-link_blog="/blog"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/contacto"
+        data-faisan-label_link_contact="Contacto" data-faisan-placeholder_search="Buscar..."></div>
 
     <!-- Hero / Search Section -->
     <section class="hero-gradient pt-16 pb-20">
@@ -215,8 +172,9 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
-                            <span class="text-yellow-400 text-xs">★★★★★</span>
-                            <span class="text-[10px] text-slate-400 font-bold">(42 reseñas)</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
+                                10+ años de trayectoria
+                            </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Carlos Mendoza</h3>
                         <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Luxury Estates
@@ -262,9 +220,9 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
-                            <span class="text-yellow-400 text-xs">★★★★</span><span
-                                class="text-slate-300 text-xs">★</span>
-                            <span class="text-[10px] text-slate-400 font-bold">(28 reseñas)</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
+                                8+ años de trayectoria
+                            </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Elena Rodríguez</h3>
                         <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Corporate &
@@ -306,8 +264,9 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
-                            <span class="text-yellow-400 text-xs">★★★★★</span>
-                            <span class="text-[10px] text-slate-400 font-bold">(15 reseñas)</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
+                                5+ años de trayectoria
+                            </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Roberto Chaves</h3>
                         <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Coastal Properties
@@ -353,8 +312,9 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
-                            <span class="text-yellow-400 text-xs">★★★★★</span>
-                            <span class="text-[10px] text-slate-400 font-bold">(31 reseñas)</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
+                                12+ años de trayectoria
+                            </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Andrés Quesada</h3>
                         <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Industrial &
@@ -399,7 +359,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-20 bg-brand-dark text-white">
+    <!-- <section class="py-20 bg-brand-dark text-white">
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-center">
             <div>
                 <div class="text-4xl font-black text-brand-teal mb-2">+150</div>
@@ -418,107 +378,291 @@
                 <div class="text-slate-400 text-sm uppercase tracking-widest">Satisfacción</div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-slate-400 py-20 border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-16 text-sm">
-                <div class="col-span-1">
-                    <div class="text-white font-bold text-2xl mb-6 leading-none flex flex-col">
-                        <span>PURA VIDA</span>
-                        <span class="text-brand-teal text-[10px] tracking-widest uppercase">Network</span>
-                    </div>
-                    <p class="leading-relaxed mb-8">
-                        La red más exclusiva de profesionales inmobiliarios bajo el respaldo y auditoría de Pura Vida
-                        Trust Services.
-                    </p>
-                    <div class="flex gap-4">
-                        <div
-                            class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:bg-brand-teal transition-all cursor-pointer">
-                            f</div>
-                        <div
-                            class="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:bg-brand-teal transition-all cursor-pointer">
-                            in</div>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="text-white font-bold mb-6">Para Usuarios</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-white transition-colors">Cómo elegir un broker</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Glosario Inmobiliario</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Seguridad en depósitos</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-white font-bold mb-6">Para Brokers</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-white transition-colors">Aplicar al Directorio</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Beneficios Premium</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Eventos de Networking</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-white font-bold mb-6">Oficinas</h5>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-4 h-4 text-brand-teal mt-1 shrink-0" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                </path>
-                            </svg>
-                            <span>San José, Costa Rica. Edificio ERP, Piso 3.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-[10px]">
-                <p>© 2024 Pura Vida Broker Directory. Respaldado por ERP Lawyers & Escrow.</p>
-            </div>
-        </div>
-    </footer>
+    <div data-faisan-component="footer.html" data-faisan-fb_url="https://www.facebook.com/Puravidaescrowandtrust"
+        data-faisan-ig_url="https://www.instagram.com/puravidaescrowandtrust/"
+        data-faisan-li_url="https://www.linkedin.com/company/pura-vida-escrow-and-trust/"></div>
 
     <script>
-        $(document).ready(function () {
+        let form = null;
+        function checkCaptcha(input) {
+            const response = input.value.toLowerCase().trim();
+            if (response === 'azul' || response === 'blue') {
+                form = input.closest('form');
+                form.querySelector('button[type="submit"]').disabled = false;
+            }
+        }
+
+        function main_init_site() {
+
+            //Captchas
+            const captchas = document.querySelectorAll('.simple-captcha');
+            if (captchas) {
+                captchas.forEach(captcha => {
+                    const captchaBox = captcha.querySelector('.captcha-box');
+                    const captchaCheck = captcha.querySelector('.captcha-check-icon');
+                    const captchaSpinner = captcha.querySelector('.captcha-spinner');
+                    const submitBtn = document.querySelector(`[data-faisan-id="${captcha.dataset.buttonId}"]`);
+                    let verified = false;
+
+                    captcha.addEventListener('click', () => {
+                        if (verified) return;
+
+                        // Start verification
+                        captchaBox.classList.remove('border-white/40');
+                        captchaBox.classList.add('border-white');
+                        captchaSpinner.classList.remove('hidden');
+
+                        // Simulate some "processing"
+                        setTimeout(() => {
+                            captchaSpinner.classList.add('hidden');
+                            captchaCheck.classList.remove('hidden');
+                            captcha.classList.add('bg-white/30', 'border-white/40');
+                            captcha.classList.remove('cursor-pointer', 'hover:bg-white/20');
+
+                            verified = true;
+                            if (submitBtn) submitBtn.disabled = false;
+
+                            // Success animation effect
+                            captchaBox.classList.add('scale-110');
+                            setTimeout(() => {
+                                captchaBox.classList.remove('scale-110');
+                            }, 200);
+                        }, 1000);
+                    });
+                });
+            }
+
+            const skeleton = document.getElementById('faisan-skeleton');
+            if (skeleton) {
+                skeleton.classList.add('fade-out');
+                setTimeout(() => skeleton.remove(), 400);
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.getElementById('mobile-menu-btn');
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function () {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu on click link
+            const mobileMenuClose = document.getElementById('mobile-menu');
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function () {
+                    mobileMenuClose.classList.add('hidden');
+                });
+            }
+
+            // Search Bar Toggle
+            const searchOpen = document.getElementById('search-open');
+            if (searchOpen) {
+                searchOpen.addEventListener('click', function () {
+                    document.getElementById('nav-links').classList.remove('flex');
+                    document.getElementById('nav-links').classList.add('hidden');
+                    document.getElementById('search-bar').classList.remove('hidden');
+                    document.getElementById('search-bar').classList.add('flex');
+                    document.getElementById('search-bar').querySelector('input').focus();
+                });
+            }
+
+            const searchClose = document.getElementById('search-close');
+            if (searchClose) {
+                searchClose.addEventListener('click', function () {
+                    document.getElementById('search-bar').classList.remove('flex');
+                    document.getElementById('search-bar').classList.add('hidden');
+                    document.getElementById('nav-links').classList.remove('hidden');
+                    document.getElementById('nav-links').classList.add('flex');
+                });
+            }
+
+            // Smooth Scroll for links
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks) {
+                navLinks.addEventListener('click', function (event) {
+                    var target = document.getElementById(event.target.getAttribute('href'));
+                    if (target) {
+                        event.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // Form Submit Logic
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('contactForm').querySelector('button');
+                    const originalText = btn.textContent;
+
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+                });
+            }
+
+            // Accordion Logic
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            if (faqToggles) {
+                faqToggles.forEach(function (item) {
+                    item.addEventListener('click', function () {
+                        const item = this.closest('.faq-item');
+                        const content = item.querySelector('.faq-content');
+                        const icon = item.querySelector('.faq-icon');
+
+                        // Close other items
+                        document.querySelectorAll('.faq-item').forEach(function (item) {
+                            item.querySelector('.faq-content').style.maxHeight = '0';
+                            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        });
+
+                        // Toggle current item
+                        if (item.classList.contains('active')) {
+                            content.style.maxHeight = '0';
+                            icon.style.transform = 'rotate(0deg)';
+                            item.classList.remove('active');
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                            icon.style.transform = 'rotate(180deg)';
+                            item.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            // Simple reveal on scroll effect
+            window.addEventListener('scroll', function () {
+                document.querySelectorAll('.value-card').forEach(function (item) {
+                    var bottom_of_object = item.offsetTop + item.offsetHeight / 4;
+                    var bottom_of_window = window.scrollTop + window.height;
+
+                    if (bottom_of_window > bottom_of_object) {
+                        item.style.opacity = '1';
+                    }
+                });
+            });
+
+            //BROKERS DIRECTORY
+
+            // Helpers for jQuery-like fadeIn/fadeOut using CSS transitions
+            function fadeIn(el, duration) {
+                if (el._fadeTimeout) {
+                    clearTimeout(el._fadeTimeout);
+                    el._fadeTimeout = null;
+                }
+                if (el.style.display === 'flex' && el.style.opacity === '1') {
+                    return;
+                }
+                el.style.transition = `opacity ${duration}ms ease`;
+                el.style.display = 'flex';
+                // Force reflow
+                el.offsetHeight;
+                el.style.opacity = '1';
+            }
+
+            function fadeOut(el, duration) {
+                if (el._fadeTimeout) {
+                    clearTimeout(el._fadeTimeout);
+                    el._fadeTimeout = null;
+                }
+                if (el.style.display === 'none') {
+                    return;
+                }
+                el.style.transition = `opacity ${duration}ms ease`;
+                el.style.opacity = '0';
+                el._fadeTimeout = setTimeout(() => {
+                    el.style.display = 'none';
+                    el._fadeTimeout = null;
+                }, duration);
+            }
+
             // Filtrado Lógico (Simulado)
             function filterBrokers() {
-                const name = $('#nameSearch').val().toLowerCase();
-                const location = $('#locationFilter').val();
-                const specialty = $('#specialtyFilter').val();
+                const nameSearch = document.getElementById('nameSearch');
+                const locationFilter = document.getElementById('locationFilter');
+                const specialtyFilter = document.getElementById('specialtyFilter');
+
+                const name = nameSearch ? nameSearch.value.toLowerCase() : '';
+                const location = locationFilter ? locationFilter.value : 'all';
+                const specialty = specialtyFilter ? specialtyFilter.value : 'all';
 
                 let visibleCount = 0;
 
-                $('.broker-card').each(function () {
-                    const cardLocation = $(this).data('location');
-                    const cardSpecialty = $(this).data('specialty');
-                    const cardName = $(this).find('h3').text().toLowerCase();
+                const brokerCards = document.querySelectorAll('.broker-card');
+                brokerCards.forEach(card => {
+                    const cardLocation = card.dataset.location || '';
+                    const cardSpecialty = card.dataset.specialty || '';
+                    const h3 = card.querySelector('h3');
+                    const cardName = h3 ? h3.textContent.toLowerCase() : '';
 
                     const matchesName = cardName.includes(name);
                     const matchesLocation = location === 'all' || cardLocation === location;
                     const matchesSpecialty = specialty === 'all' || cardSpecialty === specialty;
 
                     if (matchesName && matchesLocation && matchesSpecialty) {
-                        $(this).fadeIn(300);
+                        fadeIn(card, 300);
                         visibleCount++;
                     } else {
-                        $(this).fadeOut(200);
+                        fadeOut(card, 200);
                     }
                 });
 
-                $('#resultsCount').text(visibleCount);
+                const resultsCount = document.getElementById('resultsCount');
+                if (resultsCount) {
+                    resultsCount.textContent = visibleCount;
+                }
             }
 
             // Listeners para filtros
-            $('#nameSearch, #locationFilter, #specialtyFilter').on('change keyup', filterBrokers);
+            const nameSearch = document.getElementById('nameSearch');
+            const locationFilter = document.getElementById('locationFilter');
+            const specialtyFilter = document.getElementById('specialtyFilter');
+
+            if (nameSearch) {
+                nameSearch.addEventListener('input', filterBrokers);
+            }
+            if (locationFilter) {
+                locationFilter.addEventListener('change', filterBrokers);
+            }
+            if (specialtyFilter) {
+                specialtyFilter.addEventListener('change', filterBrokers);
+            }
 
             // Botón móvil
-            $('#mobile-menu-btn').click(function () {
-                alert('Menú móvil en construcción. Visite la versión de escritorio.');
-            });
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    alert('Menú móvil en construcción. Visite la versión de escritorio.');
+                });
+            }
+            //END BROKERS DIRECTORY
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.devLoader) {
+                window.devLoader.callback = main_init_site;
+            } else {
+                main_init_site();
+            }
         });
     </script>
 
