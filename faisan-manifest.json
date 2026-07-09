@@ -132,16 +132,22 @@
       "hash": "16ed023a3fa93bcd9861814e6b8ca1d5"
     },
     "pages/inicio": {
-      "hash": "54310f50cf207b9bb311344f3f1039a9"
+      "hash": "65be6d950a75e3c68a21005cdebab162"
     },
     "pages/home": {
-      "hash": "3fd86f5639bd30b30b069f3bc4382467"
+      "hash": "7d535716edf24b3754dc6268dba2db8b"
     },
     "pages/blog": {
       "hash": "a3f748ab7a9ccad9ebae267bad684b2e"
     },
     "pages/blogen": {
       "hash": "ac58119f96b1b0699f113009de154a05"
+    },
+    "pages/directorio-realestate-carlos-mendoza": {
+      "hash": "1bd3451b230968c0d4fb3669edbd76d7"
+    },
+    "pages/directorio-realestate": {
+      "hash": "a794df2df35cd84773045bcc267c5537"
     }
   }
 }
