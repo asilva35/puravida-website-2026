@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directorio de Brokers | Pura Vida Real Estate</title>
+    <title>Brokers Directory | Pura Vida Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -89,22 +89,22 @@
 
 
     <!-- Header / Nav -->
-    <div data-faisan-component="main-nav.html" data-faisan-link_home="/" data-faisan-label_link_home="Inicio"
-        data-faisan-link_services="/servicios" data-faisan-label_link_services="Servicios" data-faisan-link_faq="/faq"
-        data-faisan-label_link_faq="Preguntas Frecuentes" data-faisan-link_blog="/blog"
-        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/contacto"
-        data-faisan-label_link_contact="Contacto" data-faisan-placeholder_search="Buscar..."></div>
+    <div data-faisan-component="main-nav.html" data-faisan-link_home="/en/" data-faisan-label_link_home="Home"
+        data-faisan-link_services="/en/services" data-faisan-label_link_services="Services"
+        data-faisan-link_faq="/en/faq-2" data-faisan-label_link_faq="FAQ" data-faisan-link_blog="/en/blogen"
+        data-faisan-label_link_blog="Blog" data-faisan-link_contact="/en/contact"
+        data-faisan-label_link_contact="Contact" data-faisan-placeholder_search="Search..."></div>
 
     <!-- Hero / Search Section -->
     <section class="hero-gradient pt-16 pb-20">
         <div class="container mx-auto px-6 text-center">
             <span
-                class="inline-block px-4 py-1.5 bg-teal-50 text-brand-teal rounded-full text-xs font-bold mb-6 tracking-wide uppercase">Directorio
-                Especializado</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Encuentra al <span
-                    class="text-brand-teal">Broker Ideal</span> para tu proyecto</h1>
-            <p class="text-slate-600 max-w-2xl mx-auto mb-10 text-lg">Conectamos inversores con los profesionales más
-                capacitados y éticos de Costa Rica. Todos nuestros brokers pasan por un proceso de verificación.</p>
+                class="inline-block px-4 py-1.5 bg-teal-50 text-brand-teal rounded-full text-xs font-bold mb-6 tracking-wide uppercase">Specialized
+                Directory</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Find the <span
+                    class="text-brand-teal">Right Broker</span> for your project</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-10 text-lg">We connect investors with Costa Rica's most
+                qualified and ethical professionals. All of our brokers go through a verification process.</p>
 
             <!-- Filter Bar -->
             <div
@@ -114,13 +114,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
-                    <input type="text" id="nameSearch" placeholder="Nombre del broker o agencia..."
+                    <input type="text" id="nameSearch" placeholder="Broker or agency name..."
                         class="w-full bg-transparent outline-none text-slate-700">
                 </div>
                 <div class="flex-grow flex items-center px-6 border-b md:border-b-0 md:border-r border-slate-100 py-3">
                     <select id="locationFilter"
                         class="w-full bg-transparent outline-none text-slate-700 appearance-none">
-                        <option value="all">Todas las Provincias</option>
+                        <option value="all">All Provinces</option>
                         <option value="San José">San José</option>
                         <option value="Guanacaste">Guanacaste</option>
                         <option value="Puntarenas">Puntarenas</option>
@@ -130,15 +130,15 @@
                 <div class="flex-grow flex items-center px-6 py-3">
                     <select id="specialtyFilter"
                         class="w-full bg-transparent outline-none text-slate-700 appearance-none">
-                        <option value="all">Cualquier Especialidad</option>
-                        <option value="Lujo">Propiedades de Lujo</option>
-                        <option value="Inversion">Inversión Inmobiliaria</option>
-                        <option value="Coaching">Coaching Inmobiliario</option>
+                        <option value="all">Any Specialty</option>
+                        <option value="Lujo">Luxury Estates</option>
+                        <option value="Inversion">Real Estate Investment</option>
+                        <option value="Coaching">Real Estate Coaching</option>
                     </select>
                 </div>
                 <button
                     class="bg-brand-teal text-white px-8 py-3 rounded-full font-bold hover:bg-brand-dark transition-all flex items-center justify-center">
-                    Buscar
+                    Search
                 </button>
             </div>
         </div>
@@ -149,18 +149,18 @@
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-end mb-10">
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Brokers Destacados</h2>
-                    <p class="text-slate-500">Mostrando profesionales verificados por Pura Vida</p>
+                    <h2 class="text-2xl font-bold text-slate-900">Featured Brokers</h2>
+                    <p class="text-slate-500">Showing professionals verified by Pura Vida</p>
                 </div>
                 <div class="hidden md:block text-sm font-medium text-slate-400">
-                    <span id="resultsCount">7</span> profesionales encontrados
+                    <span id="resultsCount">7</span> professionals found
                 </div>
             </div>
 
             <!-- Broker Grid -->
             <div id="brokerGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Broker Card 1: Arturo Montecosta -->
-                <a href="/directorio-realestate-arturo-montecosta"
+                <a href="/en/realestate-directory-arturo-montecosta"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Guanacaste" data-specialty="Inversion">
                     <div class="relative h-56 bg-slate-200">
@@ -168,18 +168,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                9+ años de trayectoria
+                                9+ Years of Experience
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Arturo José Rodríguez Rivas</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Inversión
-                            Inmobiliaria</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Real Estate
+                            Investment</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -203,13 +203,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 2: Brooke Rochester -->
-                <a href="/directorio-realestate-broke-rochester"
+                <a href="/en/realestate-directory-broke-rochester"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Puntarenas" data-specialty="Lujo">
                     <div class="relative h-56 bg-slate-200">
@@ -217,18 +217,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                10+ años de trayectoria
+                                10+ Years of Experience
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Brooke Rochester</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Propiedades de
-                            Lujo y Playa</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Luxury & Beach
+                            Properties</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -252,13 +252,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 3: Carol Rodríguez -->
-                <a href="/directorio-realestate-carol-rodriguez"
+                <a href="/en/realestate-directory-carol-rodriguez"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Costa Rica" data-specialty="Coaching">
                     <div class="relative h-56 bg-slate-200">
@@ -266,18 +266,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                Coach · Oradora · Capacitadora
+                                Coach · Speaker · Trainer
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Carol Rodríguez</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Coaching
-                            Inmobiliario</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Real Estate
+                            Coaching</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -286,7 +286,7 @@
                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
                                     </path>
                                 </svg>
-                                <span>Costa Rica (Atención Virtual)</span>
+                                <span>Costa Rica (Virtual)</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -301,13 +301,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 4: Dawn Lane -->
-                <a href="/directorio-realestate-dawn-lane"
+                <a href="/en/realestate-directory-dawn-lane"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Guanacaste" data-specialty="Lujo">
                     <div class="relative h-56 bg-slate-200">
@@ -315,18 +315,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                25+ años de trayectoria
+                                25+ Years of Experience
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Dawn Lane</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Propiedades de
-                            Lujo</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Luxury
+                            Properties</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -350,13 +350,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 5: Esteban González -->
-                <a href="/directorio-realestate-esteban-gonzalez"
+                <a href="/en/realestate-directory-esteban-gonzalez"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Guanacaste" data-specialty="Lujo">
                     <div class="relative h-56 bg-slate-200">
@@ -364,18 +364,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                Fundador, Esteban Estates
+                                Founder, Esteban Estates
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Esteban González</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Preventa &
-                            Lujo</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Pre-Construction
+                            & Luxury</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -399,13 +399,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 6: Karlen Alvarado -->
-                <a href="/directorio-realestate-karlen-alvarado"
+                <a href="/en/realestate-directory-karlen-alvarado"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="Guanacaste" data-specialty="Lujo">
                     <div class="relative h-56 bg-slate-200">
@@ -413,18 +413,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                Fundadora, Golden Jaguar Realty®
+                                Founder, Golden Jaguar Realty®
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Karlen Alvarado</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Propiedades de
-                            Lujo</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Luxury
+                            Properties</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -433,7 +433,7 @@
                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
                                     </path>
                                 </svg>
-                                <span>Guanacaste y San José</span>
+                                <span>Guanacaste and San José</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -448,13 +448,13 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
 
                 <!-- Broker Card 7: Yali Alpízar -->
-                <a href="/directorio-realestate-yali-alpizar"
+                <a href="/en/realestate-directory-yali-alpizar"
                     class="broker-card group glass-card rounded-3xl overflow-hidden flex flex-col h-full mx-auto min-w-[300px]"
                     data-location="San José" data-specialty="Lujo">
                     <div class="relative h-56 bg-slate-200">
@@ -462,18 +462,18 @@
                             class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4">
                             <span
-                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verificado</span>
+                                class="status-badge bg-white/90 backdrop-blur px-2 py-1 rounded text-teal-600 font-bold shadow-sm">Verified</span>
                         </div>
                     </div>
                     <div class="p-6 flex-grow">
                         <div class="flex items-center gap-1 mb-2">
                             <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-semibold">
-                                35+ años de trayectoria
+                                35+ Years of Experience
                             </span>
                         </div>
                         <h3 class="text-lg font-extrabold text-slate-900 mb-1">Yali Alpízar</h3>
-                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Propiedades de
-                            Lujo</p>
+                        <p class="text-xs text-brand-teal font-bold mb-4 uppercase tracking-tighter">Luxury
+                            Properties</p>
 
                         <div class="space-y-2 mb-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
@@ -497,7 +497,7 @@
                     <div class="p-6 pt-0">
                         <span
                             class="block text-center w-full bg-slate-50 border border-slate-100 text-slate-700 py-3 rounded-xl font-bold group-hover:bg-teal-50 group-hover:text-[#38b2ac] transition-all text-sm">
-                            Ver Perfil Completo
+                            View Full Profile
                         </span>
                     </div>
                 </a>
@@ -507,7 +507,7 @@
             <div class="mt-12 text-center hidden">
                 <button
                     class="px-10 py-4 bg-white border border-slate-200 rounded-full font-bold text-slate-600 hover:bg-slate-50 transition-all shadow-sm">
-                    Cargar más profesionales
+                    Load more professionals
                 </button>
             </div>
         </div>
@@ -518,19 +518,19 @@
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-12 text-center">
             <div>
                 <div class="text-4xl font-black text-brand-teal mb-2">+150</div>
-                <div class="text-slate-400 text-sm uppercase tracking-widest">Brokers Activos</div>
+                <div class="text-slate-400 text-sm uppercase tracking-widest">Active Brokers</div>
             </div>
             <div>
                 <div class="text-4xl font-black text-brand-teal mb-2">7</div>
-                <div class="text-slate-400 text-sm uppercase tracking-widest">Provincias</div>
+                <div class="text-slate-400 text-sm uppercase tracking-widest">Provinces</div>
             </div>
             <div>
                 <div class="text-4xl font-black text-brand-teal mb-2">+2.5k</div>
-                <div class="text-slate-400 text-sm uppercase tracking-widest">Transacciones</div>
+                <div class="text-slate-400 text-sm uppercase tracking-widest">Transactions</div>
             </div>
             <div>
                 <div class="text-4xl font-black text-brand-teal mb-2">98%</div>
-                <div class="text-slate-400 text-sm uppercase tracking-widest">Satisfacción</div>
+                <div class="text-slate-400 text-sm uppercase tracking-widest">Satisfaction</div>
             </div>
         </div>
     </section> -->
@@ -750,7 +750,7 @@
                 }, duration);
             }
 
-            // Filtrado Lógico (Simulado)
+            // Simulated filtering logic
             function filterBrokers() {
                 const nameSearch = document.getElementById('nameSearch');
                 const locationFilter = document.getElementById('locationFilter');
@@ -787,7 +787,7 @@
                 }
             }
 
-            // Listeners para filtros
+            // Filter listeners
             const nameSearch = document.getElementById('nameSearch');
             const locationFilter = document.getElementById('locationFilter');
             const specialtyFilter = document.getElementById('specialtyFilter');
@@ -802,11 +802,11 @@
                 specialtyFilter.addEventListener('change', filterBrokers);
             }
 
-            // Botón móvil
+            // Mobile button
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', function () {
-                    alert('Menú móvil en construcción. Visite la versión de escritorio.');
+                    alert('Mobile menu under construction. Please visit the desktop version.');
                 });
             }
             //END BROKERS DIRECTORY

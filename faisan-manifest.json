@@ -132,10 +132,10 @@
       "hash": "16ed023a3fa93bcd9861814e6b8ca1d5"
     },
     "pages/inicio": {
-      "hash": "65be6d950a75e3c68a21005cdebab162"
+      "hash": "079336567895aad0eb6cfdce9a407cbe"
     },
     "pages/home": {
-      "hash": "7d535716edf24b3754dc6268dba2db8b"
+      "hash": "4f187ed9fdf6836157b6c6cd7a18c7d9"
     },
     "pages/blog": {
       "hash": "a3f748ab7a9ccad9ebae267bad684b2e"
@@ -147,7 +147,96 @@
       "hash": "1bd3451b230968c0d4fb3669edbd76d7"
     },
     "pages/directorio-realestate": {
-      "hash": "a794df2df35cd84773045bcc267c5537"
+      "hash": "ef5ca782249574c097d3c73c7ada4851"
+    },
+    "assets/images/brokers/no-photo.webp": {
+      "hash": "4214107c15b5221826da379b8198f3a6",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/no-photo.webp"
+    },
+    "pages/directorio-realestate-abraham-alvarez": {
+      "hash": "b53980873827fb9e3f41822633eb92e8"
+    },
+    "assets/images/brokers/arturo-montecosta.webp": {
+      "hash": "0b27a51fda9f1f33b6746634d9ba4362",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/arturo-montecosta.webp"
+    },
+    "pages/directorio-realestate-arturo-montecosta": {
+      "hash": "e8e90975ced47952aa0f47d85d81030d"
+    },
+    "assets/images/brokers/broke-rochester.webp": {
+      "hash": "400a7109a7c6fd1f61ee9f601df4ba01",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/broke-rochester.webp"
+    },
+    "pages/directorio-realestate-broke-rochester": {
+      "hash": "149e06768a510733d2c90160a6155cb5"
+    },
+    "assets/images/brokers/carol-rodriguez.webp": {
+      "hash": "114809a0bc88e0edfade50161be220eb",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/carol-rodriguez.webp"
+    },
+    "pages/directorio-realestate-carol-rodriguez": {
+      "hash": "52652cafb3eb5343d15a764f7db50bbe"
+    },
+    "assets/images/brokers/dawn-lane.webp": {
+      "hash": "2e31d05e2978de188de26f8e516f462b",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/dawn-lane.webp"
+    },
+    "pages/directorio-realestate-dawn-lane": {
+      "hash": "ccde28a20a6ec61cdae714d9c7feb585"
+    },
+    "assets/images/brokers/esteban-gonzalez.webp": {
+      "hash": "0b197942ade68f4b5a97571198d5d52b",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/esteban-gonzalez.webp"
+    },
+    "pages/directorio-realestate-esteban-gonzalez": {
+      "hash": "f4aa1a972f811f31d5d4b7ead6b59baf"
+    },
+    "assets/images/brokers/karlen-alvarado.webp": {
+      "hash": "e90e0fd40d2d66faa38effd9cd6019db",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/karlen-alvarado.webp"
+    },
+    "pages/directorio-realestate-karlen-alvarado": {
+      "hash": "38217e807c9e616cab97ad4eab5c6848"
+    },
+    "pages/directorio-realestate-marc-baissus": {
+      "hash": "79d7d5f67ecea5d45b4aa55dd551ec28"
+    },
+    "assets/images/brokers/yali-alpizar.webp": {
+      "hash": "f4650894bbfc1f75fe4e30af5dc86668",
+      "url": "https://puravidaescrowandtrust.com/wp-content/uploads/2026/07/yali-alpizar.webp"
+    },
+    "pages/directorio-realestate-yali-alpizar": {
+      "hash": "c2fa35161ffee3dd916065062289c735"
+    },
+    "pages/realestate-directory-abraham-alvarez": {
+      "hash": "de7227b2ef8b5ae9f8c5924b94b096de"
+    },
+    "pages/realestate-directory-arturo-montecosta": {
+      "hash": "373b3e22995c711d6d1bbb4d8662195f"
+    },
+    "pages/realestate-directory-broke-rochester": {
+      "hash": "a28a8ca430fc77970125c4576f137365"
+    },
+    "pages/realestate-directory-carol-rodriguez": {
+      "hash": "1aea196f5565d42137caecf0b7e90d8b"
+    },
+    "pages/realestate-directory-dawn-lane": {
+      "hash": "36cf5d62f4845ec38864b8b9d7b2d0a5"
+    },
+    "pages/realestate-directory-esteban-gonzalez": {
+      "hash": "baab74a39076355e68cfc6afc90698e6"
+    },
+    "pages/realestate-directory-karlen-alvarado": {
+      "hash": "e3e63af9a54594b9a8c5ec6266c3fa99"
+    },
+    "pages/realestate-directory-marc-baissus": {
+      "hash": "ee0c1affc96b88a8ccfdee2391b495c3"
+    },
+    "pages/realestate-directory-yali-alpizar": {
+      "hash": "eafe11f673bdeac7d0a862855389e866"
+    },
+    "pages/realestate-directory": {
+      "hash": "9d554a62e2f526c86bdb3a80c556417d"
     }
   }
 }
